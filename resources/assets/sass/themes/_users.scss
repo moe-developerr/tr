@@ -1,0 +1,47 @@
+.plc {
+	@include m('c') { color: $p-l-c; }
+	@include m('bg') { background-color: $p-l-c; }
+	@include m('bd') { border-color: $p-l-c; }
+	@include m('bdt') { border-top-color: $p-l-c; }
+	@include m('bdr') { border-right-color: $p-l-c; }
+	@include m('bdb') { border-bottom-color: $p-l-c; }
+	@include m('bdl') { border-left-color: $p-l-c; }
+}
+.slc {
+	@include m('c') { color: $s-l-c; }
+	@include m('bg') { background-color: $s-l-c; }
+	@include m('bd') { border-color: $s-l-c; }
+	@include m('bdt') { border-top-color: $s-l-c; }
+	@include m('bdr') { border-right-color: $s-l-c; }
+	@include m('bdb') { border-bottom-color: $s-l-c; }
+	@include m('bdl') { border-left-color: $s-l-c; }
+}
+.pdc {
+	@include m('c') { color: $p-d-c; }
+	@include m('bg') { background-color: $p-d-c; }
+	@include m('bd') { border-color: $p-d-c; }
+	@include m('bdt') { border-top-top: $p-d-c; }
+	@include m('bdr') { border-right-top: $p-d-c; }
+	@include m('bdb') { border-bottom-top: $p-d-c; }
+	@include m('bdl') { border-left-top: $p-d-c; }
+}
+.board {
+	&,
+	&:focus {
+		@extend .pdc--bg;
+		@extend .plc--c;
+	}
+	&:hover {
+		@extend .plc--c;
+		background-color: darken($p-d-c, 10%);
+  }
+}
+.new-board-show {
+	@extend .slc--bg;
+	&:hover {
+		background-color: darken($s-l-c, 10%);
+  }
+}
+.new-board-header {
+	@extend .slc--bdb;
+}

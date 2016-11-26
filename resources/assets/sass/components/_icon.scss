@@ -1,0 +1,17 @@
+.icon {
+	cursor: pointer;
+	text-align: center;
+	@include m('sm') {
+		width: 25px;
+	  height: 25px;
+	  line-height: 25px;
+	}
+	@include m('hide') {
+		@extend .fa;
+		@extend .fa-times;
+	}
+	@include m('ellipsis-h') {
+		@extend .fa;
+		@extend .fa-ellipsis-h;
+	}
+}

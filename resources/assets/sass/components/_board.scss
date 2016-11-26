@@ -1,0 +1,61 @@
+.board-list {
+	@extend .list-unstyled;
+  @extend .clearfix;
+}
+
+.board {
+  @extend .panel;
+  @extend .min--h-100;
+  display: block;
+  padding: 10px;
+  transition: background-color $f-t;
+}
+
+.new-board-show {
+  @extend .panel;
+  @extend .min--h-100;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color $f-t;
+}
+
+.new-board-form {
+  @extend .panel;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity $f-t;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.new-board-hide {
+  @extend .icon;
+  @extend .icon--sm;
+  @extend .icon--hide;
+  float: right;
+}
+
+.new-board-header {
+  @extend .clearfix;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.new-board-body {
+  padding-top: 10px;
+}
+
+.board-star {
+  @extend .icon;
+  @extend .icon--sm;
+	float: right;
+  opacity: 0.5;
+  transform: scale(1);
+  transition: transform .1s;
+  &:hover,
+  &.active {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
