@@ -13,7 +13,7 @@
   font-weight: normal;
   font-style: normal; }
 
-.fa, .icon--hide, .new-board-hide, .icon--ellipsis-h {
+.fa, .icon-hide, .new-board-hide, .delete-card, .card-content-hide, .check-list-delete, .icon-ellipsis-h, .list-options-btn, .icon-pen, .edit-card, .check-list-edit, .icon-window, .card-content-header-icon, .icon-comment, .add-comment-icon, .icon-check, .check-list-icon {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -72,23 +72,24 @@
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .fa-pull-left.icon--hide, .fa-pull-left.new-board-hide, .fa-pull-left.icon--ellipsis-h {
+.fa.fa-pull-left, .fa-pull-left.icon-hide, .fa-pull-left.new-board-hide, .fa-pull-left.delete-card, .fa-pull-left.card-content-hide, .fa-pull-left.check-list-delete, .fa-pull-left.icon-ellipsis-h, .fa-pull-left.list-options-btn, .fa-pull-left.icon-pen, .fa-pull-left.edit-card, .fa-pull-left.check-list-edit, .fa-pull-left.icon-window, .fa-pull-left.card-content-header-icon, .fa-pull-left.icon-comment, .fa-pull-left.add-comment-icon, .fa-pull-left.icon-check, .fa-pull-left.check-list-icon {
   margin-right: .3em; }
 
-.fa.fa-pull-right, .fa-pull-right.icon--hide, .fa-pull-right.new-board-hide, .fa-pull-right.icon--ellipsis-h {
+.fa.fa-pull-right, .fa-pull-right.icon-hide, .fa-pull-right.new-board-hide, .fa-pull-right.delete-card, .fa-pull-right.card-content-hide, .fa-pull-right.check-list-delete, .fa-pull-right.icon-ellipsis-h, .fa-pull-right.list-options-btn, .fa-pull-right.icon-pen, .fa-pull-right.edit-card, .fa-pull-right.check-list-edit, .fa-pull-right.icon-window, .fa-pull-right.card-content-header-icon, .fa-pull-right.icon-comment, .fa-pull-right.add-comment-icon, .fa-pull-right.icon-check, .fa-pull-right.check-list-icon {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
-.pull-right {
+.pull-right, .list-options-btn, .card-content-hide, .check-list-edit,
+.check-list-delete {
   float: right; }
 
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.icon--hide, .pull-left.new-board-hide, .pull-left.icon--ellipsis-h {
+.fa.pull-left, .pull-left.icon-hide, .pull-left.new-board-hide, .pull-left.delete-card, .pull-left.card-content-hide, .pull-left.check-list-delete, .pull-left.icon-ellipsis-h, .pull-left.list-options-btn, .pull-left.icon-pen, .pull-left.edit-card, .pull-left.check-list-edit, .pull-left.icon-window, .pull-left.card-content-header-icon, .pull-left.icon-comment, .pull-left.add-comment-icon, .pull-left.icon-check, .pull-left.check-list-icon {
   margin-right: .3em; }
 
-.fa.pull-right, .pull-right.icon--hide, .pull-right.new-board-hide, .pull-right.icon--ellipsis-h {
+.fa.pull-right, .list-options-btn, .card-content-hide, .check-list-edit, .check-list-delete, .pull-right.icon-hide, .pull-right.new-board-hide, .pull-right.delete-card, .pull-right.icon-ellipsis-h, .pull-right.icon-pen, .pull-right.edit-card, .pull-right.icon-window, .pull-right.card-content-header-icon, .pull-right.icon-comment, .pull-right.add-comment-icon, .pull-right.icon-check, .pull-right.check-list-icon {
   margin-left: .3em; }
 
 .fa-spin {
@@ -216,8 +217,11 @@
 .fa-remove:before,
 .fa-close:before,
 .fa-times:before,
-.icon--hide:before,
-.new-board-hide:before {
+.icon-hide:before,
+.new-board-hide:before,
+.delete-card:before,
+.card-content-hide:before,
+.check-list-delete:before {
   content: "\f00d"; }
 
 .fa-search-plus:before {
@@ -382,7 +386,7 @@
 .fa-share-square-o:before {
   content: "\f045"; }
 
-.fa-check-square-o:before {
+.fa-check-square-o:before, .icon-check:before, .check-list-icon:before {
   content: "\f046"; }
 
 .fa-arrows:before {
@@ -812,7 +816,7 @@
 .fa-tachometer:before {
   content: "\f0e4"; }
 
-.fa-comment-o:before {
+.fa-comment-o:before, .icon-comment:before, .add-comment-icon:before {
   content: "\f0e5"; }
 
 .fa-comments-o:before {
@@ -1072,7 +1076,7 @@
 .fa-bullseye:before {
   content: "\f140"; }
 
-.fa-ellipsis-h:before, .icon--ellipsis-h:before {
+.fa-ellipsis-h:before, .icon-ellipsis-h:before, .list-options-btn:before {
   content: "\f141"; }
 
 .fa-ellipsis-v:before {
@@ -1102,7 +1106,7 @@
 .fa-check-square:before {
   content: "\f14a"; }
 
-.fa-pencil-square:before {
+.fa-pencil-square:before, .icon-pen:before, .edit-card:before, .check-list-edit:before {
   content: "\f14b"; }
 
 .fa-external-link-square:before {
@@ -2262,7 +2266,7 @@
 .fa-podcast:before {
   content: "\f2ce"; }
 
-.fa-window-maximize:before {
+.fa-window-maximize:before, .icon-window:before, .card-content-header-icon:before {
   content: "\f2d0"; }
 
 .fa-window-minimize:before {
@@ -2554,8 +2558,9 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret,
-  .dropup > .btn > .caret {
+  .btn > .caret, .add-comment-btn > .caret,
+  .dropup > .btn > .caret,
+  .dropup > .add-comment-btn > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -3564,7 +3569,9 @@ mark,
 .text-right {
   text-align: right; }
 
-.text-center {
+.text-center, .card-content-header-icon,
+.add-comment-icon,
+.check-list-icon {
   text-align: center; }
 
 .text-justify {
@@ -3673,7 +3680,7 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .board-list {
+.list-unstyled, .board-list, .lists-list, .check-list {
   padding-left: 0;
   list-style: none; }
 
@@ -3749,7 +3756,11 @@ blockquote {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
-blockquote.pull-right {
+blockquote.pull-right,
+blockquote.list-options-btn,
+blockquote.card-content-hide,
+blockquote.check-list-edit,
+blockquote.check-list-delete {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -3758,16 +3769,22 @@ blockquote.pull-right {
   .blockquote-reverse footer:before,
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
-  blockquote.pull-right footer:before,
-  blockquote.pull-right small:before,
-  blockquote.pull-right .small:before {
+  blockquote.pull-right footer:before, blockquote.list-options-btn footer:before, blockquote.card-content-hide footer:before, blockquote.check-list-edit footer:before,
+  blockquote.check-list-delete footer:before,
+  blockquote.pull-right small:before, blockquote.list-options-btn small:before, blockquote.card-content-hide small:before, blockquote.check-list-edit small:before,
+  blockquote.check-list-delete small:before,
+  blockquote.pull-right .small:before, blockquote.list-options-btn .small:before, blockquote.card-content-hide .small:before, blockquote.check-list-edit .small:before,
+  blockquote.check-list-delete .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
-  blockquote.pull-right footer:after,
-  blockquote.pull-right small:after,
-  blockquote.pull-right .small:after {
+  blockquote.pull-right footer:after, blockquote.list-options-btn footer:after, blockquote.card-content-hide footer:after, blockquote.check-list-edit footer:after,
+  blockquote.check-list-delete footer:after,
+  blockquote.pull-right small:after, blockquote.list-options-btn small:after, blockquote.card-content-hide small:after, blockquote.check-list-edit small:after,
+  blockquote.check-list-delete small:after,
+  blockquote.pull-right .small:after, blockquote.list-options-btn .small:after, blockquote.card-content-hide .small:after, blockquote.check-list-edit .small:after,
+  blockquote.check-list-delete .small:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -3865,7 +3882,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .list-item, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -4028,13 +4045,13 @@ pre {
   margin-left: 100%; }
 
 @media (min-width: 768px) {
-  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .col-sm-1, .col-sm-2, .col-sm-3, .list-item, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
   .col-sm-1 {
     width: 8.3333333333%; }
   .col-sm-2 {
     width: 16.6666666667%; }
-  .col-sm-3 {
+  .col-sm-3, .list-item {
     width: 25%; }
   .col-sm-4 {
     width: 33.3333333333%; }
@@ -4678,46 +4695,54 @@ input[type="search"] {
   input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
+  .input-group-sm > .input-group-btn > input[type="date"].add-comment-btn,
   .input-group-sm input[type="date"],
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
+  .input-group-sm > .input-group-btn > input[type="time"].add-comment-btn,
   .input-group-sm
   input[type="time"],
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
+  .input-group-sm > .input-group-btn > input[type="datetime-local"].add-comment-btn,
   .input-group-sm
   input[type="datetime-local"],
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
+  .input-group-sm > .input-group-btn > input[type="month"].add-comment-btn,
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
   input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
+  .input-group-lg > .input-group-btn > input[type="date"].add-comment-btn,
   .input-group-lg input[type="date"],
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
+  .input-group-lg > .input-group-btn > input[type="time"].add-comment-btn,
   .input-group-lg
   input[type="time"],
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
+  .input-group-lg > .input-group-btn > input[type="datetime-local"].add-comment-btn,
   .input-group-lg
   input[type="datetime-local"],
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
+  .input-group-lg > .input-group-btn > input[type="month"].add-comment-btn,
   .input-group-lg
   input[type="month"] {
     line-height: 46px; } }
@@ -4795,15 +4820,18 @@ fieldset[disabled]
   min-height: 36px; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn,
+  .input-group-lg > .input-group-btn > .form-control-static.add-comment-btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn {
+  .input-group-sm > .input-group-btn > .form-control-static.btn,
+  .input-group-sm > .input-group-btn > .form-control-static.add-comment-btn {
     padding-left: 0;
     padding-right: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > .add-comment-btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -4812,17 +4840,20 @@ fieldset[disabled]
 
 select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.input-group-addon,
-.input-group-sm > .input-group-btn > select.btn {
+.input-group-sm > .input-group-btn > select.btn,
+.input-group-sm > .input-group-btn > select.add-comment-btn {
   height: 30px;
   line-height: 30px; }
 
 textarea.input-sm, .input-group-sm > textarea.form-control,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
+.input-group-sm > .input-group-btn > textarea.add-comment-btn,
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].input-group-addon,
-.input-group-sm > .input-group-btn > select[multiple].btn {
+.input-group-sm > .input-group-btn > select[multiple].btn,
+.input-group-sm > .input-group-btn > select[multiple].add-comment-btn {
   height: auto; }
 
 .form-group-sm .form-control {
@@ -4849,7 +4880,8 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn,
+.input-group-lg > .input-group-btn > .add-comment-btn {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -4858,17 +4890,20 @@ select[multiple].input-sm,
 
 select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.input-group-addon,
-.input-group-lg > .input-group-btn > select.btn {
+.input-group-lg > .input-group-btn > select.btn,
+.input-group-lg > .input-group-btn > select.add-comment-btn {
   height: 46px;
   line-height: 46px; }
 
 textarea.input-lg, .input-group-lg > textarea.form-control,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
+.input-group-lg > .input-group-btn > textarea.add-comment-btn,
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].input-group-addon,
-.input-group-lg > .input-group-btn > select[multiple].btn {
+.input-group-lg > .input-group-btn > select[multiple].btn,
+.input-group-lg > .input-group-btn > select[multiple].add-comment-btn {
   height: auto; }
 
 .form-group-lg .form-control {
@@ -4913,6 +4948,7 @@ select[multiple].input-lg,
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
+.input-group-lg > .input-group-btn > .add-comment-btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -4922,6 +4958,7 @@ select[multiple].input-lg,
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
+.input-group-sm > .input-group-btn > .add-comment-btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -5100,7 +5137,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn {
+.btn, .add-comment-btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -5119,25 +5156,27 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  .btn:focus, .add-comment-btn:focus, .btn.focus, .focus.add-comment-btn, .btn:active:focus, .add-comment-btn:active:focus, .btn:active.focus, .add-comment-btn:active.focus, .btn.active:focus, .active.add-comment-btn:focus, .btn.active.focus, .active.focus.add-comment-btn {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .btn:focus, .btn.focus {
+  .btn:hover, .add-comment-btn:hover, .btn:focus, .add-comment-btn:focus, .btn.focus, .focus.add-comment-btn {
     color: #636b6f;
     text-decoration: none; }
-  .btn:active, .btn.active {
+  .btn:active, .add-comment-btn:active, .btn.active, .active.add-comment-btn {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .btn[disabled],
-  fieldset[disabled] .btn {
+  .btn.disabled, .disabled.add-comment-btn, .btn[disabled], [disabled].add-comment-btn,
+  fieldset[disabled] .btn,
+  fieldset[disabled] .add-comment-btn {
     cursor: not-allowed;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
 
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, a.disabled.add-comment-btn,
+fieldset[disabled] a.btn,
+fieldset[disabled] a.add-comment-btn {
   pointer-events: none; }
 
 .btn-default {
@@ -5382,19 +5421,19 @@ fieldset[disabled] a.btn {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .add-comment-btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .add-comment-btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn {
+.btn-xs, .btn-group-xs > .btn, .btn-group-xs > .add-comment-btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -5478,7 +5517,8 @@ tbody.collapse.in {
   border-radius: 4px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right {
+  .dropdown-menu.pull-right, .dropdown-menu.list-options-btn, .dropdown-menu.card-content-hide, .dropdown-menu.check-list-edit,
+  .dropdown-menu.check-list-delete {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -5546,7 +5586,8 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, .list-options-btn > .dropdown-menu, .card-content-hide > .dropdown-menu, .check-list-edit > .dropdown-menu,
+.check-list-delete > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -5576,20 +5617,27 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .btn-group > .add-comment-btn,
+  .btn-group-vertical > .btn,
+  .btn-group-vertical > .add-comment-btn {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group > .btn:hover, .btn-group > .add-comment-btn:hover, .btn-group > .btn:focus, .btn-group > .add-comment-btn:focus, .btn-group > .btn:active, .btn-group > .add-comment-btn:active, .btn-group > .btn.active, .btn-group > .active.add-comment-btn,
     .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .add-comment-btn:hover,
     .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .add-comment-btn:focus,
     .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group-vertical > .add-comment-btn:active,
+    .btn-group-vertical > .btn.active,
+    .btn-group-vertical > .active.add-comment-btn {
       z-index: 2; }
 
-.btn-group .btn + .btn,
+.btn-group .btn + .btn, .btn-group .add-comment-btn + .btn, .btn-group .btn + .add-comment-btn, .btn-group .add-comment-btn + .add-comment-btn,
 .btn-group .btn + .btn-group,
+.btn-group .add-comment-btn + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group .btn-group + .add-comment-btn,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -5600,25 +5648,25 @@ tbody.collapse.in {
     display: table; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn,
+  .btn-toolbar .btn, .btn-toolbar .add-comment-btn,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn,
+  .btn-toolbar > .btn, .btn-toolbar > .add-comment-btn,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .add-comment-btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .btn-group > .add-comment-btn:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .add-comment-btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .add-comment-btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
@@ -5626,15 +5674,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .add-comment-btn {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .add-comment-btn:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .add-comment-btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -5642,11 +5690,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .btn-group > .add-comment-btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .btn-group-lg.btn-group > .add-comment-btn + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px; }
 
@@ -5655,19 +5703,20 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret {
+.btn .caret, .add-comment-btn .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .btn-group-lg > .add-comment-btn .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .btn-group-lg > .add-comment-btn .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .add-comment-btn,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn,
+.btn-group-vertical > .btn-group > .add-comment-btn {
   display: block;
   float: none;
   width: 100%;
@@ -5680,40 +5729,42 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, .btn-group-vertical > .btn-group > .add-comment-btn {
   float: none; }
 
-.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .add-comment-btn + .btn, .btn-group-vertical > .btn + .add-comment-btn, .btn-group-vertical > .add-comment-btn + .add-comment-btn,
 .btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .add-comment-btn + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn-group + .add-comment-btn,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .add-comment-btn:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .add-comment-btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .add-comment-btn:last-child:not(:first-child) {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .add-comment-btn {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .add-comment-btn:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .add-comment-btn:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -5722,20 +5773,23 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn,
+  .btn-group-justified > .btn, .btn-group-justified > .add-comment-btn,
   .btn-group-justified > .btn-group {
     float: none;
     display: table-cell;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn {
+  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .add-comment-btn {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .add-comment-btn input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .add-comment-btn input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn-group > .add-comment-btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .add-comment-btn input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -5784,13 +5838,15 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn,
+  .input-group-sm > .input-group-btn > .input-group-addon.add-comment-btn {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn,
+  .input-group-lg > .input-group-btn > .input-group-addon.add-comment-btn {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -5801,10 +5857,14 @@ tbody.collapse.in {
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .add-comment-btn,
 .input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn-group > .add-comment-btn,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+.input-group-btn:last-child > .add-comment-btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
+.input-group-btn:last-child > .btn-group:not(:last-child) > .add-comment-btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
@@ -5814,10 +5874,14 @@ tbody.collapse.in {
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .add-comment-btn,
 .input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn-group > .add-comment-btn,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+.input-group-btn:first-child > .add-comment-btn:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
+.input-group-btn:first-child > .btn-group:not(:first-child) > .add-comment-btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
@@ -5828,16 +5892,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn {
+  .input-group-btn > .btn, .input-group-btn > .add-comment-btn {
     position: relative; }
-    .input-group-btn > .btn + .btn {
+    .input-group-btn > .btn + .btn, .input-group-btn > .add-comment-btn + .btn, .input-group-btn > .btn + .add-comment-btn, .input-group-btn > .add-comment-btn + .add-comment-btn {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+    .input-group-btn > .btn:hover, .input-group-btn > .add-comment-btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .add-comment-btn:focus, .input-group-btn > .btn:active, .input-group-btn > .add-comment-btn:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn, .input-group-btn:first-child > .add-comment-btn,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn, .input-group-btn:last-child > .add-comment-btn,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -6214,10 +6278,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 7px;
   margin-bottom: 7px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .btn-group-sm > .navbar-btn.add-comment-btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .btn-group-xs > .navbar-btn.add-comment-btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -6510,7 +6574,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label {
+  .btn .label, .add-comment-btn .label {
     position: relative;
     top: -1px; }
 
@@ -6564,11 +6628,12 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge {
+  .btn .badge, .add-comment-btn .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge,
-  .btn-group-xs > .btn .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge, .btn-group-xs > .add-comment-btn .badge,
+  .btn-group-xs > .btn .badge,
+  .btn-group-xs > .add-comment-btn .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -6796,7 +6861,12 @@ a.thumbnail.active {
     max-width: none; }
 
 .media-right,
-.media > .pull-right {
+.media > .pull-right,
+.media > .list-options-btn,
+.media > .card-content-hide,
+.media > .check-list-edit,
+.media >
+.check-list-delete {
   padding-left: 10px; }
 
 .media-left,
@@ -6984,7 +7054,8 @@ button.list-group-item-danger {
   margin-bottom: 0;
   line-height: 1.3; }
 
-.panel, .board, .new-board-show, .new-board-form {
+.panel, .board, .new-board-show, .new-board-form, .list, .card, .card-content, .store-card-section,
+.edit-card-section {
   margin-bottom: 22px;
   background-color: #fff;
   border: 1px solid transparent;
@@ -7026,25 +7097,34 @@ button.list-group-item-danger {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; }
 
-.panel > .list-group, .board > .list-group, .new-board-show > .list-group, .new-board-form > .list-group,
-.panel > .panel-collapse > .list-group, .board > .panel-collapse > .list-group, .new-board-show > .panel-collapse > .list-group, .new-board-form > .panel-collapse > .list-group {
+.panel > .list-group, .board > .list-group, .new-board-show > .list-group, .new-board-form > .list-group, .list > .list-group, .card > .list-group, .card-content > .list-group, .store-card-section > .list-group,
+.edit-card-section > .list-group,
+.panel > .panel-collapse > .list-group, .board > .panel-collapse > .list-group, .new-board-show > .panel-collapse > .list-group, .new-board-form > .panel-collapse > .list-group, .list > .panel-collapse > .list-group, .card > .panel-collapse > .list-group, .card-content > .panel-collapse > .list-group, .store-card-section > .panel-collapse > .list-group,
+.edit-card-section > .panel-collapse > .list-group {
   margin-bottom: 0; }
-  .panel > .list-group .list-group-item, .board > .list-group .list-group-item, .new-board-show > .list-group .list-group-item, .new-board-form > .list-group .list-group-item,
-  .panel > .panel-collapse > .list-group .list-group-item, .board > .panel-collapse > .list-group .list-group-item, .new-board-show > .panel-collapse > .list-group .list-group-item, .new-board-form > .panel-collapse > .list-group .list-group-item {
+  .panel > .list-group .list-group-item, .board > .list-group .list-group-item, .new-board-show > .list-group .list-group-item, .new-board-form > .list-group .list-group-item, .list > .list-group .list-group-item, .card > .list-group .list-group-item, .card-content > .list-group .list-group-item, .store-card-section > .list-group .list-group-item,
+  .edit-card-section > .list-group .list-group-item,
+  .panel > .panel-collapse > .list-group .list-group-item, .board > .panel-collapse > .list-group .list-group-item, .new-board-show > .panel-collapse > .list-group .list-group-item, .new-board-form > .panel-collapse > .list-group .list-group-item, .list > .panel-collapse > .list-group .list-group-item, .card > .panel-collapse > .list-group .list-group-item, .card-content > .panel-collapse > .list-group .list-group-item, .store-card-section > .panel-collapse > .list-group .list-group-item,
+  .edit-card-section > .panel-collapse > .list-group .list-group-item {
     border-width: 1px 0;
     border-radius: 0; }
-  .panel > .list-group:first-child .list-group-item:first-child, .board > .list-group:first-child .list-group-item:first-child, .new-board-show > .list-group:first-child .list-group-item:first-child, .new-board-form > .list-group:first-child .list-group-item:first-child,
-  .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child, .board > .panel-collapse > .list-group:first-child .list-group-item:first-child, .new-board-show > .panel-collapse > .list-group:first-child .list-group-item:first-child, .new-board-form > .panel-collapse > .list-group:first-child .list-group-item:first-child {
+  .panel > .list-group:first-child .list-group-item:first-child, .board > .list-group:first-child .list-group-item:first-child, .new-board-show > .list-group:first-child .list-group-item:first-child, .new-board-form > .list-group:first-child .list-group-item:first-child, .list > .list-group:first-child .list-group-item:first-child, .card > .list-group:first-child .list-group-item:first-child, .card-content > .list-group:first-child .list-group-item:first-child, .store-card-section > .list-group:first-child .list-group-item:first-child,
+  .edit-card-section > .list-group:first-child .list-group-item:first-child,
+  .panel > .panel-collapse > .list-group:first-child .list-group-item:first-child, .board > .panel-collapse > .list-group:first-child .list-group-item:first-child, .new-board-show > .panel-collapse > .list-group:first-child .list-group-item:first-child, .new-board-form > .panel-collapse > .list-group:first-child .list-group-item:first-child, .list > .panel-collapse > .list-group:first-child .list-group-item:first-child, .card > .panel-collapse > .list-group:first-child .list-group-item:first-child, .card-content > .panel-collapse > .list-group:first-child .list-group-item:first-child, .store-card-section > .panel-collapse > .list-group:first-child .list-group-item:first-child,
+  .edit-card-section > .panel-collapse > .list-group:first-child .list-group-item:first-child {
     border-top: 0;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px; }
-  .panel > .list-group:last-child .list-group-item:last-child, .board > .list-group:last-child .list-group-item:last-child, .new-board-show > .list-group:last-child .list-group-item:last-child, .new-board-form > .list-group:last-child .list-group-item:last-child,
-  .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child, .board > .panel-collapse > .list-group:last-child .list-group-item:last-child, .new-board-show > .panel-collapse > .list-group:last-child .list-group-item:last-child, .new-board-form > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+  .panel > .list-group:last-child .list-group-item:last-child, .board > .list-group:last-child .list-group-item:last-child, .new-board-show > .list-group:last-child .list-group-item:last-child, .new-board-form > .list-group:last-child .list-group-item:last-child, .list > .list-group:last-child .list-group-item:last-child, .card > .list-group:last-child .list-group-item:last-child, .card-content > .list-group:last-child .list-group-item:last-child, .store-card-section > .list-group:last-child .list-group-item:last-child,
+  .edit-card-section > .list-group:last-child .list-group-item:last-child,
+  .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child, .board > .panel-collapse > .list-group:last-child .list-group-item:last-child, .new-board-show > .panel-collapse > .list-group:last-child .list-group-item:last-child, .new-board-form > .panel-collapse > .list-group:last-child .list-group-item:last-child, .list > .panel-collapse > .list-group:last-child .list-group-item:last-child, .card > .panel-collapse > .list-group:last-child .list-group-item:last-child, .card-content > .panel-collapse > .list-group:last-child .list-group-item:last-child, .store-card-section > .panel-collapse > .list-group:last-child .list-group-item:last-child,
+  .edit-card-section > .panel-collapse > .list-group:last-child .list-group-item:last-child {
     border-bottom: 0;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px; }
 
-.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .board > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .new-board-show > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .new-board-form > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
+.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .board > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .new-board-show > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .new-board-form > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .list > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .card > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .card-content > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child, .store-card-section > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child,
+.edit-card-section > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
@@ -7054,142 +7134,260 @@ button.list-group-item-danger {
 .list-group + .panel-footer {
   border-top-width: 0; }
 
-.panel > .table, .board > .table, .new-board-show > .table, .new-board-form > .table,
-.panel > .table-responsive > .table, .board > .table-responsive > .table, .new-board-show > .table-responsive > .table, .new-board-form > .table-responsive > .table,
-.panel > .panel-collapse > .table, .board > .panel-collapse > .table, .new-board-show > .panel-collapse > .table, .new-board-form > .panel-collapse > .table {
+.panel > .table, .board > .table, .new-board-show > .table, .new-board-form > .table, .list > .table, .card > .table, .card-content > .table, .store-card-section > .table,
+.edit-card-section > .table,
+.panel > .table-responsive > .table, .board > .table-responsive > .table, .new-board-show > .table-responsive > .table, .new-board-form > .table-responsive > .table, .list > .table-responsive > .table, .card > .table-responsive > .table, .card-content > .table-responsive > .table, .store-card-section > .table-responsive > .table,
+.edit-card-section > .table-responsive > .table,
+.panel > .panel-collapse > .table, .board > .panel-collapse > .table, .new-board-show > .panel-collapse > .table, .new-board-form > .panel-collapse > .table, .list > .panel-collapse > .table, .card > .panel-collapse > .table, .card-content > .panel-collapse > .table, .store-card-section > .panel-collapse > .table,
+.edit-card-section > .panel-collapse > .table {
   margin-bottom: 0; }
-  .panel > .table caption, .board > .table caption, .new-board-show > .table caption, .new-board-form > .table caption,
-  .panel > .table-responsive > .table caption, .board > .table-responsive > .table caption, .new-board-show > .table-responsive > .table caption, .new-board-form > .table-responsive > .table caption,
-  .panel > .panel-collapse > .table caption, .board > .panel-collapse > .table caption, .new-board-show > .panel-collapse > .table caption, .new-board-form > .panel-collapse > .table caption {
+  .panel > .table caption, .board > .table caption, .new-board-show > .table caption, .new-board-form > .table caption, .list > .table caption, .card > .table caption, .card-content > .table caption, .store-card-section > .table caption,
+  .edit-card-section > .table caption,
+  .panel > .table-responsive > .table caption, .board > .table-responsive > .table caption, .new-board-show > .table-responsive > .table caption, .new-board-form > .table-responsive > .table caption, .list > .table-responsive > .table caption, .card > .table-responsive > .table caption, .card-content > .table-responsive > .table caption, .store-card-section > .table-responsive > .table caption,
+  .edit-card-section > .table-responsive > .table caption,
+  .panel > .panel-collapse > .table caption, .board > .panel-collapse > .table caption, .new-board-show > .panel-collapse > .table caption, .new-board-form > .panel-collapse > .table caption, .list > .panel-collapse > .table caption, .card > .panel-collapse > .table caption, .card-content > .panel-collapse > .table caption, .store-card-section > .panel-collapse > .table caption,
+  .edit-card-section > .panel-collapse > .table caption {
     padding-left: 15px;
     padding-right: 15px; }
 
-.panel > .table:first-child, .board > .table:first-child, .new-board-show > .table:first-child, .new-board-form > .table:first-child,
-.panel > .table-responsive:first-child > .table:first-child, .board > .table-responsive:first-child > .table:first-child, .new-board-show > .table-responsive:first-child > .table:first-child, .new-board-form > .table-responsive:first-child > .table:first-child {
+.panel > .table:first-child, .board > .table:first-child, .new-board-show > .table:first-child, .new-board-form > .table:first-child, .list > .table:first-child, .card > .table:first-child, .card-content > .table:first-child, .store-card-section > .table:first-child,
+.edit-card-section > .table:first-child,
+.panel > .table-responsive:first-child > .table:first-child, .board > .table-responsive:first-child > .table:first-child, .new-board-show > .table-responsive:first-child > .table:first-child, .new-board-form > .table-responsive:first-child > .table:first-child, .list > .table-responsive:first-child > .table:first-child, .card > .table-responsive:first-child > .table:first-child, .card-content > .table-responsive:first-child > .table:first-child, .store-card-section > .table-responsive:first-child > .table:first-child,
+.edit-card-section > .table-responsive:first-child > .table:first-child {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px; }
-  .panel > .table:first-child > thead:first-child > tr:first-child, .board > .table:first-child > thead:first-child > tr:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child,
-  .panel > .table:first-child > tbody:first-child > tr:first-child, .board > .table:first-child > tbody:first-child > tr:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child,
-  .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
-  .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
+  .panel > .table:first-child > thead:first-child > tr:first-child, .board > .table:first-child > thead:first-child > tr:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child, .list > .table:first-child > thead:first-child > tr:first-child, .card > .table:first-child > thead:first-child > tr:first-child, .card-content > .table:first-child > thead:first-child > tr:first-child, .store-card-section > .table:first-child > thead:first-child > tr:first-child,
+  .edit-card-section > .table:first-child > thead:first-child > tr:first-child,
+  .panel > .table:first-child > tbody:first-child > tr:first-child, .board > .table:first-child > tbody:first-child > tr:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child, .list > .table:first-child > tbody:first-child > tr:first-child, .card > .table:first-child > tbody:first-child > tr:first-child, .card-content > .table:first-child > tbody:first-child > tr:first-child, .store-card-section > .table:first-child > tbody:first-child > tr:first-child,
+  .edit-card-section > .table:first-child > tbody:first-child > tr:first-child,
+  .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .list > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .card-content > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+  .edit-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,
+  .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .list > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .card-content > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child,
+  .edit-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
-    .panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .board > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child td:first-child,
-    .panel > .table:first-child > thead:first-child > tr:first-child th:first-child, .board > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child th:first-child,
-    .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child, .board > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-    .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child, .board > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child th:first-child,
-    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
-    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
-    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
-    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
+    .panel > .table:first-child > thead:first-child > tr:first-child td:first-child, .board > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child td:first-child, .list > .table:first-child > thead:first-child > tr:first-child td:first-child, .card > .table:first-child > thead:first-child > tr:first-child td:first-child, .card-content > .table:first-child > thead:first-child > tr:first-child td:first-child, .store-card-section > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .edit-card-section > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .panel > .table:first-child > thead:first-child > tr:first-child th:first-child, .board > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child th:first-child, .list > .table:first-child > thead:first-child > tr:first-child th:first-child, .card > .table:first-child > thead:first-child > tr:first-child th:first-child, .card-content > .table:first-child > thead:first-child > tr:first-child th:first-child, .store-card-section > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .edit-card-section > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .panel > .table:first-child > tbody:first-child > tr:first-child td:first-child, .board > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child td:first-child, .list > .table:first-child > tbody:first-child > tr:first-child td:first-child, .card > .table:first-child > tbody:first-child > tr:first-child td:first-child, .card-content > .table:first-child > tbody:first-child > tr:first-child td:first-child, .store-card-section > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .edit-card-section > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .panel > .table:first-child > tbody:first-child > tr:first-child th:first-child, .board > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child th:first-child, .list > .table:first-child > tbody:first-child > tr:first-child th:first-child, .card > .table:first-child > tbody:first-child > tr:first-child th:first-child, .card-content > .table:first-child > tbody:first-child > tr:first-child th:first-child, .store-card-section > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+    .edit-card-section > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .list > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .card-content > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,
+    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .list > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .card-content > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,
+    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .list > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .card-content > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,
+    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .list > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .card-content > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child, .store-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {
       border-top-left-radius: 3px; }
-    .panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .board > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child td:last-child,
-    .panel > .table:first-child > thead:first-child > tr:first-child th:last-child, .board > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child th:last-child,
-    .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child, .board > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-    .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child, .board > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child th:last-child,
-    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
-    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
-    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
-    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
+    .panel > .table:first-child > thead:first-child > tr:first-child td:last-child, .board > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child td:last-child, .list > .table:first-child > thead:first-child > tr:first-child td:last-child, .card > .table:first-child > thead:first-child > tr:first-child td:last-child, .card-content > .table:first-child > thead:first-child > tr:first-child td:last-child, .store-card-section > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .edit-card-section > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .panel > .table:first-child > thead:first-child > tr:first-child th:last-child, .board > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-show > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-form > .table:first-child > thead:first-child > tr:first-child th:last-child, .list > .table:first-child > thead:first-child > tr:first-child th:last-child, .card > .table:first-child > thead:first-child > tr:first-child th:last-child, .card-content > .table:first-child > thead:first-child > tr:first-child th:last-child, .store-card-section > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .edit-card-section > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .panel > .table:first-child > tbody:first-child > tr:first-child td:last-child, .board > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child td:last-child, .list > .table:first-child > tbody:first-child > tr:first-child td:last-child, .card > .table:first-child > tbody:first-child > tr:first-child td:last-child, .card-content > .table:first-child > tbody:first-child > tr:first-child td:last-child, .store-card-section > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .edit-card-section > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .panel > .table:first-child > tbody:first-child > tr:first-child th:last-child, .board > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-show > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-form > .table:first-child > tbody:first-child > tr:first-child th:last-child, .list > .table:first-child > tbody:first-child > tr:first-child th:last-child, .card > .table:first-child > tbody:first-child > tr:first-child th:last-child, .card-content > .table:first-child > tbody:first-child > tr:first-child th:last-child, .store-card-section > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+    .edit-card-section > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .list > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .card-content > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child, .store-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,
+    .panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .board > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .list > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .card > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .card-content > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child, .store-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,
+    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .list > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .card-content > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child, .store-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,
+    .panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .board > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-show > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .new-board-form > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .list > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .card > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .card-content > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child, .store-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child,
+    .edit-card-section > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {
       border-top-right-radius: 3px; }
 
-.panel > .table:last-child, .board > .table:last-child, .new-board-show > .table:last-child, .new-board-form > .table:last-child,
-.panel > .table-responsive:last-child > .table:last-child, .board > .table-responsive:last-child > .table:last-child, .new-board-show > .table-responsive:last-child > .table:last-child, .new-board-form > .table-responsive:last-child > .table:last-child {
+.panel > .table:last-child, .board > .table:last-child, .new-board-show > .table:last-child, .new-board-form > .table:last-child, .list > .table:last-child, .card > .table:last-child, .card-content > .table:last-child, .store-card-section > .table:last-child,
+.edit-card-section > .table:last-child,
+.panel > .table-responsive:last-child > .table:last-child, .board > .table-responsive:last-child > .table:last-child, .new-board-show > .table-responsive:last-child > .table:last-child, .new-board-form > .table-responsive:last-child > .table:last-child, .list > .table-responsive:last-child > .table:last-child, .card > .table-responsive:last-child > .table:last-child, .card-content > .table-responsive:last-child > .table:last-child, .store-card-section > .table-responsive:last-child > .table:last-child,
+.edit-card-section > .table-responsive:last-child > .table:last-child {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px; }
-  .panel > .table:last-child > tbody:last-child > tr:last-child, .board > .table:last-child > tbody:last-child > tr:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child,
-  .panel > .table:last-child > tfoot:last-child > tr:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child,
-  .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
-  .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
+  .panel > .table:last-child > tbody:last-child > tr:last-child, .board > .table:last-child > tbody:last-child > tr:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child, .list > .table:last-child > tbody:last-child > tr:last-child, .card > .table:last-child > tbody:last-child > tr:last-child, .card-content > .table:last-child > tbody:last-child > tr:last-child, .store-card-section > .table:last-child > tbody:last-child > tr:last-child,
+  .edit-card-section > .table:last-child > tbody:last-child > tr:last-child,
+  .panel > .table:last-child > tfoot:last-child > tr:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child, .list > .table:last-child > tfoot:last-child > tr:last-child, .card > .table:last-child > tfoot:last-child > tr:last-child, .card-content > .table:last-child > tfoot:last-child > tr:last-child, .store-card-section > .table:last-child > tfoot:last-child > tr:last-child,
+  .edit-card-section > .table:last-child > tfoot:last-child > tr:last-child,
+  .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .list > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .card-content > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+  .edit-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,
+  .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .list > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .card-content > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child,
+  .edit-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
-    .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .board > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-    .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child, .board > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-    .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .board > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-    .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .board > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
-    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
-    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
-    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
-    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
+    .panel > .table:last-child > tbody:last-child > tr:last-child td:first-child, .board > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child td:first-child, .list > .table:last-child > tbody:last-child > tr:last-child td:first-child, .card > .table:last-child > tbody:last-child > tr:last-child td:first-child, .card-content > .table:last-child > tbody:last-child > tr:last-child td:first-child, .store-card-section > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .edit-card-section > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .panel > .table:last-child > tbody:last-child > tr:last-child th:first-child, .board > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child th:first-child, .list > .table:last-child > tbody:last-child > tr:last-child th:first-child, .card > .table:last-child > tbody:last-child > tr:last-child th:first-child, .card-content > .table:last-child > tbody:last-child > tr:last-child th:first-child, .store-card-section > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .edit-card-section > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .board > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .list > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .card > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .card-content > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .store-card-section > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .edit-card-section > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .board > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .list > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .card > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .card-content > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .store-card-section > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .edit-card-section > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .list > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .card-content > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child, .store-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,
+    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .list > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .card-content > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child, .store-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,
+    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .list > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .card-content > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child, .store-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,
+    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .list > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .card-content > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child, .store-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {
       border-bottom-left-radius: 3px; }
-    .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .board > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-    .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child, .board > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-    .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-    .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
-    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
-    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
-    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
-    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
+    .panel > .table:last-child > tbody:last-child > tr:last-child td:last-child, .board > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child td:last-child, .list > .table:last-child > tbody:last-child > tr:last-child td:last-child, .card > .table:last-child > tbody:last-child > tr:last-child td:last-child, .card-content > .table:last-child > tbody:last-child > tr:last-child td:last-child, .store-card-section > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .edit-card-section > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .panel > .table:last-child > tbody:last-child > tr:last-child th:last-child, .board > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-show > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-form > .table:last-child > tbody:last-child > tr:last-child th:last-child, .list > .table:last-child > tbody:last-child > tr:last-child th:last-child, .card > .table:last-child > tbody:last-child > tr:last-child th:last-child, .card-content > .table:last-child > tbody:last-child > tr:last-child th:last-child, .store-card-section > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .edit-card-section > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .list > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .card > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .card-content > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .store-card-section > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .edit-card-section > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .board > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-show > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-form > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .list > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .card > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .card-content > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .store-card-section > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .edit-card-section > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .list > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .card-content > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,
+    .panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .board > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .list > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .card > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .card-content > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,
+    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .list > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .card-content > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,
+    .panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .board > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-show > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .new-board-form > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .list > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .card > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .card-content > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child, .store-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child,
+    .edit-card-section > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {
       border-bottom-right-radius: 3px; }
 
-.panel > .panel-body + .table, .board > .panel-body + .table, .new-board-show > .panel-body + .table, .new-board-form > .panel-body + .table,
-.panel > .panel-body + .table-responsive, .board > .panel-body + .table-responsive, .new-board-show > .panel-body + .table-responsive, .new-board-form > .panel-body + .table-responsive,
-.panel > .table + .panel-body, .board > .table + .panel-body, .new-board-show > .table + .panel-body, .new-board-form > .table + .panel-body,
-.panel > .table-responsive + .panel-body, .board > .table-responsive + .panel-body, .new-board-show > .table-responsive + .panel-body, .new-board-form > .table-responsive + .panel-body {
+.panel > .panel-body + .table, .board > .panel-body + .table, .new-board-show > .panel-body + .table, .new-board-form > .panel-body + .table, .list > .panel-body + .table, .card > .panel-body + .table, .card-content > .panel-body + .table, .store-card-section > .panel-body + .table,
+.edit-card-section > .panel-body + .table,
+.panel > .panel-body + .table-responsive, .board > .panel-body + .table-responsive, .new-board-show > .panel-body + .table-responsive, .new-board-form > .panel-body + .table-responsive, .list > .panel-body + .table-responsive, .card > .panel-body + .table-responsive, .card-content > .panel-body + .table-responsive, .store-card-section > .panel-body + .table-responsive,
+.edit-card-section > .panel-body + .table-responsive,
+.panel > .table + .panel-body, .board > .table + .panel-body, .new-board-show > .table + .panel-body, .new-board-form > .table + .panel-body, .list > .table + .panel-body, .card > .table + .panel-body, .card-content > .table + .panel-body, .store-card-section > .table + .panel-body,
+.edit-card-section > .table + .panel-body,
+.panel > .table-responsive + .panel-body, .board > .table-responsive + .panel-body, .new-board-show > .table-responsive + .panel-body, .new-board-form > .table-responsive + .panel-body, .list > .table-responsive + .panel-body, .card > .table-responsive + .panel-body, .card-content > .table-responsive + .panel-body, .store-card-section > .table-responsive + .panel-body,
+.edit-card-section > .table-responsive + .panel-body {
   border-top: 1px solid #ddd; }
 
-.panel > .table > tbody:first-child > tr:first-child th, .board > .table > tbody:first-child > tr:first-child th, .new-board-show > .table > tbody:first-child > tr:first-child th, .new-board-form > .table > tbody:first-child > tr:first-child th,
-.panel > .table > tbody:first-child > tr:first-child td, .board > .table > tbody:first-child > tr:first-child td, .new-board-show > .table > tbody:first-child > tr:first-child td, .new-board-form > .table > tbody:first-child > tr:first-child td {
+.panel > .table > tbody:first-child > tr:first-child th, .board > .table > tbody:first-child > tr:first-child th, .new-board-show > .table > tbody:first-child > tr:first-child th, .new-board-form > .table > tbody:first-child > tr:first-child th, .list > .table > tbody:first-child > tr:first-child th, .card > .table > tbody:first-child > tr:first-child th, .card-content > .table > tbody:first-child > tr:first-child th, .store-card-section > .table > tbody:first-child > tr:first-child th,
+.edit-card-section > .table > tbody:first-child > tr:first-child th,
+.panel > .table > tbody:first-child > tr:first-child td, .board > .table > tbody:first-child > tr:first-child td, .new-board-show > .table > tbody:first-child > tr:first-child td, .new-board-form > .table > tbody:first-child > tr:first-child td, .list > .table > tbody:first-child > tr:first-child td, .card > .table > tbody:first-child > tr:first-child td, .card-content > .table > tbody:first-child > tr:first-child td, .store-card-section > .table > tbody:first-child > tr:first-child td,
+.edit-card-section > .table > tbody:first-child > tr:first-child td {
   border-top: 0; }
 
-.panel > .table-bordered, .board > .table-bordered, .new-board-show > .table-bordered, .new-board-form > .table-bordered,
-.panel > .table-responsive > .table-bordered, .board > .table-responsive > .table-bordered, .new-board-show > .table-responsive > .table-bordered, .new-board-form > .table-responsive > .table-bordered {
+.panel > .table-bordered, .board > .table-bordered, .new-board-show > .table-bordered, .new-board-form > .table-bordered, .list > .table-bordered, .card > .table-bordered, .card-content > .table-bordered, .store-card-section > .table-bordered,
+.edit-card-section > .table-bordered,
+.panel > .table-responsive > .table-bordered, .board > .table-responsive > .table-bordered, .new-board-show > .table-responsive > .table-bordered, .new-board-form > .table-responsive > .table-bordered, .list > .table-responsive > .table-bordered, .card > .table-responsive > .table-bordered, .card-content > .table-responsive > .table-bordered, .store-card-section > .table-responsive > .table-bordered,
+.edit-card-section > .table-responsive > .table-bordered {
   border: 0; }
-  .panel > .table-bordered > thead > tr > th:first-child, .board > .table-bordered > thead > tr > th:first-child, .new-board-show > .table-bordered > thead > tr > th:first-child, .new-board-form > .table-bordered > thead > tr > th:first-child,
-  .panel > .table-bordered > thead > tr > td:first-child, .board > .table-bordered > thead > tr > td:first-child, .new-board-show > .table-bordered > thead > tr > td:first-child, .new-board-form > .table-bordered > thead > tr > td:first-child,
-  .panel > .table-bordered > tbody > tr > th:first-child, .board > .table-bordered > tbody > tr > th:first-child, .new-board-show > .table-bordered > tbody > tr > th:first-child, .new-board-form > .table-bordered > tbody > tr > th:first-child,
-  .panel > .table-bordered > tbody > tr > td:first-child, .board > .table-bordered > tbody > tr > td:first-child, .new-board-show > .table-bordered > tbody > tr > td:first-child, .new-board-form > .table-bordered > tbody > tr > td:first-child,
-  .panel > .table-bordered > tfoot > tr > th:first-child, .board > .table-bordered > tfoot > tr > th:first-child, .new-board-show > .table-bordered > tfoot > tr > th:first-child, .new-board-form > .table-bordered > tfoot > tr > th:first-child,
-  .panel > .table-bordered > tfoot > tr > td:first-child, .board > .table-bordered > tfoot > tr > td:first-child, .new-board-show > .table-bordered > tfoot > tr > td:first-child, .new-board-form > .table-bordered > tfoot > tr > td:first-child,
-  .panel > .table-responsive > .table-bordered > thead > tr > th:first-child, .board > .table-responsive > .table-bordered > thead > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > th:first-child,
-  .panel > .table-responsive > .table-bordered > thead > tr > td:first-child, .board > .table-responsive > .table-bordered > thead > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > td:first-child,
-  .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child, .board > .table-responsive > .table-bordered > tbody > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > th:first-child,
-  .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child, .board > .table-responsive > .table-bordered > tbody > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > td:first-child,
-  .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .board > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
-  .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .board > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+  .panel > .table-bordered > thead > tr > th:first-child, .board > .table-bordered > thead > tr > th:first-child, .new-board-show > .table-bordered > thead > tr > th:first-child, .new-board-form > .table-bordered > thead > tr > th:first-child, .list > .table-bordered > thead > tr > th:first-child, .card > .table-bordered > thead > tr > th:first-child, .card-content > .table-bordered > thead > tr > th:first-child, .store-card-section > .table-bordered > thead > tr > th:first-child,
+  .edit-card-section > .table-bordered > thead > tr > th:first-child,
+  .panel > .table-bordered > thead > tr > td:first-child, .board > .table-bordered > thead > tr > td:first-child, .new-board-show > .table-bordered > thead > tr > td:first-child, .new-board-form > .table-bordered > thead > tr > td:first-child, .list > .table-bordered > thead > tr > td:first-child, .card > .table-bordered > thead > tr > td:first-child, .card-content > .table-bordered > thead > tr > td:first-child, .store-card-section > .table-bordered > thead > tr > td:first-child,
+  .edit-card-section > .table-bordered > thead > tr > td:first-child,
+  .panel > .table-bordered > tbody > tr > th:first-child, .board > .table-bordered > tbody > tr > th:first-child, .new-board-show > .table-bordered > tbody > tr > th:first-child, .new-board-form > .table-bordered > tbody > tr > th:first-child, .list > .table-bordered > tbody > tr > th:first-child, .card > .table-bordered > tbody > tr > th:first-child, .card-content > .table-bordered > tbody > tr > th:first-child, .store-card-section > .table-bordered > tbody > tr > th:first-child,
+  .edit-card-section > .table-bordered > tbody > tr > th:first-child,
+  .panel > .table-bordered > tbody > tr > td:first-child, .board > .table-bordered > tbody > tr > td:first-child, .new-board-show > .table-bordered > tbody > tr > td:first-child, .new-board-form > .table-bordered > tbody > tr > td:first-child, .list > .table-bordered > tbody > tr > td:first-child, .card > .table-bordered > tbody > tr > td:first-child, .card-content > .table-bordered > tbody > tr > td:first-child, .store-card-section > .table-bordered > tbody > tr > td:first-child,
+  .edit-card-section > .table-bordered > tbody > tr > td:first-child,
+  .panel > .table-bordered > tfoot > tr > th:first-child, .board > .table-bordered > tfoot > tr > th:first-child, .new-board-show > .table-bordered > tfoot > tr > th:first-child, .new-board-form > .table-bordered > tfoot > tr > th:first-child, .list > .table-bordered > tfoot > tr > th:first-child, .card > .table-bordered > tfoot > tr > th:first-child, .card-content > .table-bordered > tfoot > tr > th:first-child, .store-card-section > .table-bordered > tfoot > tr > th:first-child,
+  .edit-card-section > .table-bordered > tfoot > tr > th:first-child,
+  .panel > .table-bordered > tfoot > tr > td:first-child, .board > .table-bordered > tfoot > tr > td:first-child, .new-board-show > .table-bordered > tfoot > tr > td:first-child, .new-board-form > .table-bordered > tfoot > tr > td:first-child, .list > .table-bordered > tfoot > tr > td:first-child, .card > .table-bordered > tfoot > tr > td:first-child, .card-content > .table-bordered > tfoot > tr > td:first-child, .store-card-section > .table-bordered > tfoot > tr > td:first-child,
+  .edit-card-section > .table-bordered > tfoot > tr > td:first-child,
+  .panel > .table-responsive > .table-bordered > thead > tr > th:first-child, .board > .table-responsive > .table-bordered > thead > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > th:first-child, .list > .table-responsive > .table-bordered > thead > tr > th:first-child, .card > .table-responsive > .table-bordered > thead > tr > th:first-child, .card-content > .table-responsive > .table-bordered > thead > tr > th:first-child, .store-card-section > .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr > th:first-child,
+  .panel > .table-responsive > .table-bordered > thead > tr > td:first-child, .board > .table-responsive > .table-bordered > thead > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > td:first-child, .list > .table-responsive > .table-bordered > thead > tr > td:first-child, .card > .table-responsive > .table-bordered > thead > tr > td:first-child, .card-content > .table-responsive > .table-bordered > thead > tr > td:first-child, .store-card-section > .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr > td:first-child,
+  .panel > .table-responsive > .table-bordered > tbody > tr > th:first-child, .board > .table-responsive > .table-bordered > tbody > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > th:first-child, .list > .table-responsive > .table-bordered > tbody > tr > th:first-child, .card > .table-responsive > .table-bordered > tbody > tr > th:first-child, .card-content > .table-responsive > .table-bordered > tbody > tr > th:first-child, .store-card-section > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr > th:first-child,
+  .panel > .table-responsive > .table-bordered > tbody > tr > td:first-child, .board > .table-responsive > .table-bordered > tbody > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > td:first-child, .list > .table-responsive > .table-bordered > tbody > tr > td:first-child, .card > .table-responsive > .table-bordered > tbody > tr > td:first-child, .card-content > .table-responsive > .table-bordered > tbody > tr > td:first-child, .store-card-section > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr > td:first-child,
+  .panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .board > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .list > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .card > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .card-content > .table-responsive > .table-bordered > tfoot > tr > th:first-child, .store-card-section > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+  .panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .board > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .list > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .card > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .card-content > .table-responsive > .table-bordered > tfoot > tr > td:first-child, .store-card-section > .table-responsive > .table-bordered > tfoot > tr > td:first-child,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr > td:first-child {
     border-left: 0; }
-  .panel > .table-bordered > thead > tr > th:last-child, .board > .table-bordered > thead > tr > th:last-child, .new-board-show > .table-bordered > thead > tr > th:last-child, .new-board-form > .table-bordered > thead > tr > th:last-child,
-  .panel > .table-bordered > thead > tr > td:last-child, .board > .table-bordered > thead > tr > td:last-child, .new-board-show > .table-bordered > thead > tr > td:last-child, .new-board-form > .table-bordered > thead > tr > td:last-child,
-  .panel > .table-bordered > tbody > tr > th:last-child, .board > .table-bordered > tbody > tr > th:last-child, .new-board-show > .table-bordered > tbody > tr > th:last-child, .new-board-form > .table-bordered > tbody > tr > th:last-child,
-  .panel > .table-bordered > tbody > tr > td:last-child, .board > .table-bordered > tbody > tr > td:last-child, .new-board-show > .table-bordered > tbody > tr > td:last-child, .new-board-form > .table-bordered > tbody > tr > td:last-child,
-  .panel > .table-bordered > tfoot > tr > th:last-child, .board > .table-bordered > tfoot > tr > th:last-child, .new-board-show > .table-bordered > tfoot > tr > th:last-child, .new-board-form > .table-bordered > tfoot > tr > th:last-child,
-  .panel > .table-bordered > tfoot > tr > td:last-child, .board > .table-bordered > tfoot > tr > td:last-child, .new-board-show > .table-bordered > tfoot > tr > td:last-child, .new-board-form > .table-bordered > tfoot > tr > td:last-child,
-  .panel > .table-responsive > .table-bordered > thead > tr > th:last-child, .board > .table-responsive > .table-bordered > thead > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > th:last-child,
-  .panel > .table-responsive > .table-bordered > thead > tr > td:last-child, .board > .table-responsive > .table-bordered > thead > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > td:last-child,
-  .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child, .board > .table-responsive > .table-bordered > tbody > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > th:last-child,
-  .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child, .board > .table-responsive > .table-bordered > tbody > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > td:last-child,
-  .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .board > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
-  .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .board > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+  .panel > .table-bordered > thead > tr > th:last-child, .board > .table-bordered > thead > tr > th:last-child, .new-board-show > .table-bordered > thead > tr > th:last-child, .new-board-form > .table-bordered > thead > tr > th:last-child, .list > .table-bordered > thead > tr > th:last-child, .card > .table-bordered > thead > tr > th:last-child, .card-content > .table-bordered > thead > tr > th:last-child, .store-card-section > .table-bordered > thead > tr > th:last-child,
+  .edit-card-section > .table-bordered > thead > tr > th:last-child,
+  .panel > .table-bordered > thead > tr > td:last-child, .board > .table-bordered > thead > tr > td:last-child, .new-board-show > .table-bordered > thead > tr > td:last-child, .new-board-form > .table-bordered > thead > tr > td:last-child, .list > .table-bordered > thead > tr > td:last-child, .card > .table-bordered > thead > tr > td:last-child, .card-content > .table-bordered > thead > tr > td:last-child, .store-card-section > .table-bordered > thead > tr > td:last-child,
+  .edit-card-section > .table-bordered > thead > tr > td:last-child,
+  .panel > .table-bordered > tbody > tr > th:last-child, .board > .table-bordered > tbody > tr > th:last-child, .new-board-show > .table-bordered > tbody > tr > th:last-child, .new-board-form > .table-bordered > tbody > tr > th:last-child, .list > .table-bordered > tbody > tr > th:last-child, .card > .table-bordered > tbody > tr > th:last-child, .card-content > .table-bordered > tbody > tr > th:last-child, .store-card-section > .table-bordered > tbody > tr > th:last-child,
+  .edit-card-section > .table-bordered > tbody > tr > th:last-child,
+  .panel > .table-bordered > tbody > tr > td:last-child, .board > .table-bordered > tbody > tr > td:last-child, .new-board-show > .table-bordered > tbody > tr > td:last-child, .new-board-form > .table-bordered > tbody > tr > td:last-child, .list > .table-bordered > tbody > tr > td:last-child, .card > .table-bordered > tbody > tr > td:last-child, .card-content > .table-bordered > tbody > tr > td:last-child, .store-card-section > .table-bordered > tbody > tr > td:last-child,
+  .edit-card-section > .table-bordered > tbody > tr > td:last-child,
+  .panel > .table-bordered > tfoot > tr > th:last-child, .board > .table-bordered > tfoot > tr > th:last-child, .new-board-show > .table-bordered > tfoot > tr > th:last-child, .new-board-form > .table-bordered > tfoot > tr > th:last-child, .list > .table-bordered > tfoot > tr > th:last-child, .card > .table-bordered > tfoot > tr > th:last-child, .card-content > .table-bordered > tfoot > tr > th:last-child, .store-card-section > .table-bordered > tfoot > tr > th:last-child,
+  .edit-card-section > .table-bordered > tfoot > tr > th:last-child,
+  .panel > .table-bordered > tfoot > tr > td:last-child, .board > .table-bordered > tfoot > tr > td:last-child, .new-board-show > .table-bordered > tfoot > tr > td:last-child, .new-board-form > .table-bordered > tfoot > tr > td:last-child, .list > .table-bordered > tfoot > tr > td:last-child, .card > .table-bordered > tfoot > tr > td:last-child, .card-content > .table-bordered > tfoot > tr > td:last-child, .store-card-section > .table-bordered > tfoot > tr > td:last-child,
+  .edit-card-section > .table-bordered > tfoot > tr > td:last-child,
+  .panel > .table-responsive > .table-bordered > thead > tr > th:last-child, .board > .table-responsive > .table-bordered > thead > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > th:last-child, .list > .table-responsive > .table-bordered > thead > tr > th:last-child, .card > .table-responsive > .table-bordered > thead > tr > th:last-child, .card-content > .table-responsive > .table-bordered > thead > tr > th:last-child, .store-card-section > .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr > th:last-child,
+  .panel > .table-responsive > .table-bordered > thead > tr > td:last-child, .board > .table-responsive > .table-bordered > thead > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > thead > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > thead > tr > td:last-child, .list > .table-responsive > .table-bordered > thead > tr > td:last-child, .card > .table-responsive > .table-bordered > thead > tr > td:last-child, .card-content > .table-responsive > .table-bordered > thead > tr > td:last-child, .store-card-section > .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr > td:last-child,
+  .panel > .table-responsive > .table-bordered > tbody > tr > th:last-child, .board > .table-responsive > .table-bordered > tbody > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > th:last-child, .list > .table-responsive > .table-bordered > tbody > tr > th:last-child, .card > .table-responsive > .table-bordered > tbody > tr > th:last-child, .card-content > .table-responsive > .table-bordered > tbody > tr > th:last-child, .store-card-section > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr > th:last-child,
+  .panel > .table-responsive > .table-bordered > tbody > tr > td:last-child, .board > .table-responsive > .table-bordered > tbody > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > tbody > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > tbody > tr > td:last-child, .list > .table-responsive > .table-bordered > tbody > tr > td:last-child, .card > .table-responsive > .table-bordered > tbody > tr > td:last-child, .card-content > .table-responsive > .table-bordered > tbody > tr > td:last-child, .store-card-section > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr > td:last-child,
+  .panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .board > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .list > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .card > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .card-content > .table-responsive > .table-bordered > tfoot > tr > th:last-child, .store-card-section > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+  .panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .board > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .new-board-show > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .new-board-form > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .list > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .card > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .card-content > .table-responsive > .table-bordered > tfoot > tr > td:last-child, .store-card-section > .table-responsive > .table-bordered > tfoot > tr > td:last-child,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr > td:last-child {
     border-right: 0; }
-  .panel > .table-bordered > thead > tr:first-child > td, .board > .table-bordered > thead > tr:first-child > td, .new-board-show > .table-bordered > thead > tr:first-child > td, .new-board-form > .table-bordered > thead > tr:first-child > td,
-  .panel > .table-bordered > thead > tr:first-child > th, .board > .table-bordered > thead > tr:first-child > th, .new-board-show > .table-bordered > thead > tr:first-child > th, .new-board-form > .table-bordered > thead > tr:first-child > th,
-  .panel > .table-bordered > tbody > tr:first-child > td, .board > .table-bordered > tbody > tr:first-child > td, .new-board-show > .table-bordered > tbody > tr:first-child > td, .new-board-form > .table-bordered > tbody > tr:first-child > td,
-  .panel > .table-bordered > tbody > tr:first-child > th, .board > .table-bordered > tbody > tr:first-child > th, .new-board-show > .table-bordered > tbody > tr:first-child > th, .new-board-form > .table-bordered > tbody > tr:first-child > th,
-  .panel > .table-responsive > .table-bordered > thead > tr:first-child > td, .board > .table-responsive > .table-bordered > thead > tr:first-child > td, .new-board-show > .table-responsive > .table-bordered > thead > tr:first-child > td, .new-board-form > .table-responsive > .table-bordered > thead > tr:first-child > td,
-  .panel > .table-responsive > .table-bordered > thead > tr:first-child > th, .board > .table-responsive > .table-bordered > thead > tr:first-child > th, .new-board-show > .table-responsive > .table-bordered > thead > tr:first-child > th, .new-board-form > .table-responsive > .table-bordered > thead > tr:first-child > th,
-  .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td, .board > .table-responsive > .table-bordered > tbody > tr:first-child > td, .new-board-show > .table-responsive > .table-bordered > tbody > tr:first-child > td, .new-board-form > .table-responsive > .table-bordered > tbody > tr:first-child > td,
-  .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th, .board > .table-responsive > .table-bordered > tbody > tr:first-child > th, .new-board-show > .table-responsive > .table-bordered > tbody > tr:first-child > th, .new-board-form > .table-responsive > .table-bordered > tbody > tr:first-child > th {
+  .panel > .table-bordered > thead > tr:first-child > td, .board > .table-bordered > thead > tr:first-child > td, .new-board-show > .table-bordered > thead > tr:first-child > td, .new-board-form > .table-bordered > thead > tr:first-child > td, .list > .table-bordered > thead > tr:first-child > td, .card > .table-bordered > thead > tr:first-child > td, .card-content > .table-bordered > thead > tr:first-child > td, .store-card-section > .table-bordered > thead > tr:first-child > td,
+  .edit-card-section > .table-bordered > thead > tr:first-child > td,
+  .panel > .table-bordered > thead > tr:first-child > th, .board > .table-bordered > thead > tr:first-child > th, .new-board-show > .table-bordered > thead > tr:first-child > th, .new-board-form > .table-bordered > thead > tr:first-child > th, .list > .table-bordered > thead > tr:first-child > th, .card > .table-bordered > thead > tr:first-child > th, .card-content > .table-bordered > thead > tr:first-child > th, .store-card-section > .table-bordered > thead > tr:first-child > th,
+  .edit-card-section > .table-bordered > thead > tr:first-child > th,
+  .panel > .table-bordered > tbody > tr:first-child > td, .board > .table-bordered > tbody > tr:first-child > td, .new-board-show > .table-bordered > tbody > tr:first-child > td, .new-board-form > .table-bordered > tbody > tr:first-child > td, .list > .table-bordered > tbody > tr:first-child > td, .card > .table-bordered > tbody > tr:first-child > td, .card-content > .table-bordered > tbody > tr:first-child > td, .store-card-section > .table-bordered > tbody > tr:first-child > td,
+  .edit-card-section > .table-bordered > tbody > tr:first-child > td,
+  .panel > .table-bordered > tbody > tr:first-child > th, .board > .table-bordered > tbody > tr:first-child > th, .new-board-show > .table-bordered > tbody > tr:first-child > th, .new-board-form > .table-bordered > tbody > tr:first-child > th, .list > .table-bordered > tbody > tr:first-child > th, .card > .table-bordered > tbody > tr:first-child > th, .card-content > .table-bordered > tbody > tr:first-child > th, .store-card-section > .table-bordered > tbody > tr:first-child > th,
+  .edit-card-section > .table-bordered > tbody > tr:first-child > th,
+  .panel > .table-responsive > .table-bordered > thead > tr:first-child > td, .board > .table-responsive > .table-bordered > thead > tr:first-child > td, .new-board-show > .table-responsive > .table-bordered > thead > tr:first-child > td, .new-board-form > .table-responsive > .table-bordered > thead > tr:first-child > td, .list > .table-responsive > .table-bordered > thead > tr:first-child > td, .card > .table-responsive > .table-bordered > thead > tr:first-child > td, .card-content > .table-responsive > .table-bordered > thead > tr:first-child > td, .store-card-section > .table-responsive > .table-bordered > thead > tr:first-child > td,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr:first-child > td,
+  .panel > .table-responsive > .table-bordered > thead > tr:first-child > th, .board > .table-responsive > .table-bordered > thead > tr:first-child > th, .new-board-show > .table-responsive > .table-bordered > thead > tr:first-child > th, .new-board-form > .table-responsive > .table-bordered > thead > tr:first-child > th, .list > .table-responsive > .table-bordered > thead > tr:first-child > th, .card > .table-responsive > .table-bordered > thead > tr:first-child > th, .card-content > .table-responsive > .table-bordered > thead > tr:first-child > th, .store-card-section > .table-responsive > .table-bordered > thead > tr:first-child > th,
+  .edit-card-section > .table-responsive > .table-bordered > thead > tr:first-child > th,
+  .panel > .table-responsive > .table-bordered > tbody > tr:first-child > td, .board > .table-responsive > .table-bordered > tbody > tr:first-child > td, .new-board-show > .table-responsive > .table-bordered > tbody > tr:first-child > td, .new-board-form > .table-responsive > .table-bordered > tbody > tr:first-child > td, .list > .table-responsive > .table-bordered > tbody > tr:first-child > td, .card > .table-responsive > .table-bordered > tbody > tr:first-child > td, .card-content > .table-responsive > .table-bordered > tbody > tr:first-child > td, .store-card-section > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr:first-child > td,
+  .panel > .table-responsive > .table-bordered > tbody > tr:first-child > th, .board > .table-responsive > .table-bordered > tbody > tr:first-child > th, .new-board-show > .table-responsive > .table-bordered > tbody > tr:first-child > th, .new-board-form > .table-responsive > .table-bordered > tbody > tr:first-child > th, .list > .table-responsive > .table-bordered > tbody > tr:first-child > th, .card > .table-responsive > .table-bordered > tbody > tr:first-child > th, .card-content > .table-responsive > .table-bordered > tbody > tr:first-child > th, .store-card-section > .table-responsive > .table-bordered > tbody > tr:first-child > th,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr:first-child > th {
     border-bottom: 0; }
-  .panel > .table-bordered > tbody > tr:last-child > td, .board > .table-bordered > tbody > tr:last-child > td, .new-board-show > .table-bordered > tbody > tr:last-child > td, .new-board-form > .table-bordered > tbody > tr:last-child > td,
-  .panel > .table-bordered > tbody > tr:last-child > th, .board > .table-bordered > tbody > tr:last-child > th, .new-board-show > .table-bordered > tbody > tr:last-child > th, .new-board-form > .table-bordered > tbody > tr:last-child > th,
-  .panel > .table-bordered > tfoot > tr:last-child > td, .board > .table-bordered > tfoot > tr:last-child > td, .new-board-show > .table-bordered > tfoot > tr:last-child > td, .new-board-form > .table-bordered > tfoot > tr:last-child > td,
-  .panel > .table-bordered > tfoot > tr:last-child > th, .board > .table-bordered > tfoot > tr:last-child > th, .new-board-show > .table-bordered > tfoot > tr:last-child > th, .new-board-form > .table-bordered > tfoot > tr:last-child > th,
-  .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td, .board > .table-responsive > .table-bordered > tbody > tr:last-child > td, .new-board-show > .table-responsive > .table-bordered > tbody > tr:last-child > td, .new-board-form > .table-responsive > .table-bordered > tbody > tr:last-child > td,
-  .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th, .board > .table-responsive > .table-bordered > tbody > tr:last-child > th, .new-board-show > .table-responsive > .table-bordered > tbody > tr:last-child > th, .new-board-form > .table-responsive > .table-bordered > tbody > tr:last-child > th,
-  .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .board > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .new-board-show > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .new-board-form > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
-  .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .board > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .new-board-show > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .new-board-form > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
+  .panel > .table-bordered > tbody > tr:last-child > td, .board > .table-bordered > tbody > tr:last-child > td, .new-board-show > .table-bordered > tbody > tr:last-child > td, .new-board-form > .table-bordered > tbody > tr:last-child > td, .list > .table-bordered > tbody > tr:last-child > td, .card > .table-bordered > tbody > tr:last-child > td, .card-content > .table-bordered > tbody > tr:last-child > td, .store-card-section > .table-bordered > tbody > tr:last-child > td,
+  .edit-card-section > .table-bordered > tbody > tr:last-child > td,
+  .panel > .table-bordered > tbody > tr:last-child > th, .board > .table-bordered > tbody > tr:last-child > th, .new-board-show > .table-bordered > tbody > tr:last-child > th, .new-board-form > .table-bordered > tbody > tr:last-child > th, .list > .table-bordered > tbody > tr:last-child > th, .card > .table-bordered > tbody > tr:last-child > th, .card-content > .table-bordered > tbody > tr:last-child > th, .store-card-section > .table-bordered > tbody > tr:last-child > th,
+  .edit-card-section > .table-bordered > tbody > tr:last-child > th,
+  .panel > .table-bordered > tfoot > tr:last-child > td, .board > .table-bordered > tfoot > tr:last-child > td, .new-board-show > .table-bordered > tfoot > tr:last-child > td, .new-board-form > .table-bordered > tfoot > tr:last-child > td, .list > .table-bordered > tfoot > tr:last-child > td, .card > .table-bordered > tfoot > tr:last-child > td, .card-content > .table-bordered > tfoot > tr:last-child > td, .store-card-section > .table-bordered > tfoot > tr:last-child > td,
+  .edit-card-section > .table-bordered > tfoot > tr:last-child > td,
+  .panel > .table-bordered > tfoot > tr:last-child > th, .board > .table-bordered > tfoot > tr:last-child > th, .new-board-show > .table-bordered > tfoot > tr:last-child > th, .new-board-form > .table-bordered > tfoot > tr:last-child > th, .list > .table-bordered > tfoot > tr:last-child > th, .card > .table-bordered > tfoot > tr:last-child > th, .card-content > .table-bordered > tfoot > tr:last-child > th, .store-card-section > .table-bordered > tfoot > tr:last-child > th,
+  .edit-card-section > .table-bordered > tfoot > tr:last-child > th,
+  .panel > .table-responsive > .table-bordered > tbody > tr:last-child > td, .board > .table-responsive > .table-bordered > tbody > tr:last-child > td, .new-board-show > .table-responsive > .table-bordered > tbody > tr:last-child > td, .new-board-form > .table-responsive > .table-bordered > tbody > tr:last-child > td, .list > .table-responsive > .table-bordered > tbody > tr:last-child > td, .card > .table-responsive > .table-bordered > tbody > tr:last-child > td, .card-content > .table-responsive > .table-bordered > tbody > tr:last-child > td, .store-card-section > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr:last-child > td,
+  .panel > .table-responsive > .table-bordered > tbody > tr:last-child > th, .board > .table-responsive > .table-bordered > tbody > tr:last-child > th, .new-board-show > .table-responsive > .table-bordered > tbody > tr:last-child > th, .new-board-form > .table-responsive > .table-bordered > tbody > tr:last-child > th, .list > .table-responsive > .table-bordered > tbody > tr:last-child > th, .card > .table-responsive > .table-bordered > tbody > tr:last-child > th, .card-content > .table-responsive > .table-bordered > tbody > tr:last-child > th, .store-card-section > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  .edit-card-section > .table-responsive > .table-bordered > tbody > tr:last-child > th,
+  .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .board > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .new-board-show > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .new-board-form > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .list > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .card > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .card-content > .table-responsive > .table-bordered > tfoot > tr:last-child > td, .store-card-section > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+  .panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .board > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .new-board-show > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .new-board-form > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .list > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .card > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .card-content > .table-responsive > .table-bordered > tfoot > tr:last-child > th, .store-card-section > .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+  .edit-card-section > .table-responsive > .table-bordered > tfoot > tr:last-child > th {
     border-bottom: 0; }
 
-.panel > .table-responsive, .board > .table-responsive, .new-board-show > .table-responsive, .new-board-form > .table-responsive {
+.panel > .table-responsive, .board > .table-responsive, .new-board-show > .table-responsive, .new-board-form > .table-responsive, .list > .table-responsive, .card > .table-responsive, .card-content > .table-responsive, .store-card-section > .table-responsive,
+.edit-card-section > .table-responsive {
   border: 0;
   margin-bottom: 0; }
 
 .panel-group {
   margin-bottom: 22px; }
-  .panel-group .panel, .panel-group .board, .panel-group .new-board-show, .panel-group .new-board-form {
+  .panel-group .panel, .panel-group .board, .panel-group .new-board-show, .panel-group .new-board-form, .panel-group .list, .panel-group .card, .panel-group .card-content, .panel-group .store-card-section, .panel-group
+  .edit-card-section {
     margin-bottom: 0;
     border-radius: 4px; }
-    .panel-group .panel + .panel, .panel-group .board + .panel, .panel-group .new-board-show + .panel, .panel-group .new-board-form + .panel, .panel-group .panel + .board, .panel-group .board + .board, .panel-group .new-board-show + .board, .panel-group .new-board-form + .board, .panel-group .panel + .new-board-show, .panel-group .board + .new-board-show, .panel-group .new-board-show + .new-board-show, .panel-group .new-board-form + .new-board-show, .panel-group .panel + .new-board-form, .panel-group .board + .new-board-form, .panel-group .new-board-show + .new-board-form, .panel-group .new-board-form + .new-board-form {
+    .panel-group .panel + .panel, .panel-group .board + .panel, .panel-group .new-board-show + .panel, .panel-group .new-board-form + .panel, .panel-group .list + .panel, .panel-group .card + .panel, .panel-group .card-content + .panel, .panel-group .store-card-section + .panel, .panel-group
+    .edit-card-section + .panel, .panel-group .panel + .board, .panel-group .board + .board, .panel-group .new-board-show + .board, .panel-group .new-board-form + .board, .panel-group .list + .board, .panel-group .card + .board, .panel-group .card-content + .board, .panel-group .store-card-section + .board, .panel-group
+    .edit-card-section + .board, .panel-group .panel + .new-board-show, .panel-group .board + .new-board-show, .panel-group .new-board-show + .new-board-show, .panel-group .new-board-form + .new-board-show, .panel-group .list + .new-board-show, .panel-group .card + .new-board-show, .panel-group .card-content + .new-board-show, .panel-group .store-card-section + .new-board-show, .panel-group
+    .edit-card-section + .new-board-show, .panel-group .panel + .new-board-form, .panel-group .board + .new-board-form, .panel-group .new-board-show + .new-board-form, .panel-group .new-board-form + .new-board-form, .panel-group .list + .new-board-form, .panel-group .card + .new-board-form, .panel-group .card-content + .new-board-form, .panel-group .store-card-section + .new-board-form, .panel-group
+    .edit-card-section + .new-board-form, .panel-group .panel + .list, .panel-group .board + .list, .panel-group .new-board-show + .list, .panel-group .new-board-form + .list, .panel-group .list + .list, .panel-group .card + .list, .panel-group .card-content + .list, .panel-group .store-card-section + .list, .panel-group
+    .edit-card-section + .list, .panel-group .panel + .card, .panel-group .board + .card, .panel-group .new-board-show + .card, .panel-group .new-board-form + .card, .panel-group .list + .card, .panel-group .card + .card, .panel-group .card-content + .card, .panel-group .store-card-section + .card, .panel-group
+    .edit-card-section + .card, .panel-group .panel + .card-content, .panel-group .board + .card-content, .panel-group .new-board-show + .card-content, .panel-group .new-board-form + .card-content, .panel-group .list + .card-content, .panel-group .card + .card-content, .panel-group .card-content + .card-content, .panel-group .store-card-section + .card-content, .panel-group
+    .edit-card-section + .card-content, .panel-group .panel + .store-card-section, .panel-group .board + .store-card-section, .panel-group .new-board-show + .store-card-section, .panel-group .new-board-form + .store-card-section, .panel-group .list + .store-card-section, .panel-group .card + .store-card-section, .panel-group .card-content + .store-card-section, .panel-group .store-card-section + .store-card-section, .panel-group
+    .edit-card-section + .store-card-section, .panel-group .panel +
+    .edit-card-section, .panel-group .board +
+    .edit-card-section, .panel-group .new-board-show +
+    .edit-card-section, .panel-group .new-board-form +
+    .edit-card-section, .panel-group .list +
+    .edit-card-section, .panel-group .card +
+    .edit-card-section, .panel-group .card-content +
+    .edit-card-section, .panel-group .store-card-section +
+    .edit-card-section, .panel-group
+    .edit-card-section +
+    .edit-card-section {
       margin-top: 5px; }
   .panel-group .panel-heading {
     border-bottom: 0; }
@@ -7441,10 +7639,10 @@ button.close {
     display: table; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn {
+  .modal-footer .btn + .btn, .modal-footer .add-comment-btn + .btn, .modal-footer .btn + .add-comment-btn, .modal-footer .add-comment-btn + .add-comment-btn {
     margin-left: 5px;
     margin-bottom: 0; }
-  .modal-footer .btn-group .btn + .btn {
+  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .add-comment-btn + .btn, .modal-footer .btn-group .btn + .add-comment-btn, .modal-footer .btn-group .add-comment-btn + .add-comment-btn {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -7859,7 +8057,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn {
+  .carousel-caption .btn, .carousel-caption .add-comment-btn {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -7884,11 +8082,11 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .board-list:before, .new-board-header:before, .clearfix:after, .board-list:after, .new-board-header:after {
+.clearfix:before, .board-list:before, .new-board-header:before, .lists-list:before, .list-header:before, .card:before, .clearfix:after, .board-list:after, .new-board-header:after, .lists-list:after, .list-header:after, .card:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .board-list:after, .new-board-header:after {
+.clearfix:after, .board-list:after, .new-board-header:after, .lists-list:after, .list-header:after, .card:after {
   clear: both; }
 
 .center-block {
@@ -7896,7 +8094,8 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, .list-options-btn, .card-content-hide, .check-list-edit,
+.check-list-delete {
   float: right !important; }
 
 .pull-left {
@@ -8105,8 +8304,24 @@ a:focus {
 .min--h-100, .board, .new-board-show {
   min-height: 100px; }
 
-.position--r {
+.position--r, .card, .card-content-header,
+.add-comment-header,
+.check-list-header, .card-content-hide {
   position: relative; }
+
+.z-index--t, .edit-card, .delete-card, .card-content-hide {
+  z-index: 1; }
+
+.transition--f, .card {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.transition--s {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.border--r-sm, .add-comment-message {
+  border-radius: 4px; }
 
 .board {
   display: block;
@@ -8152,22 +8367,126 @@ a:focus {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
 
-.popup {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-  .popup--sm {
-    max-width: 300px; }
+.list-header {
+  position: relative;
+  margin-bottom: 10px; }
 
-.icon, .new-board-hide, .board-star {
+.list {
+  padding: 10px; }
+
+.card {
+  display: block;
+  padding-right: 50px;
+  margin-bottom: 10px;
+  border: none; }
+  .card:last-child {
+    margin-bottom: 0; }
+
+.card .card-name {
+  border-radius: 4px 0 0 4px; }
+
+.create-card {
+  border-radius: 4px; }
+
+.card .card-name,
+.create-card {
+  display: block;
+  padding: 5px; }
+
+.edit-card {
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-left: 0; }
+
+.delete-card {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  margin-left: 0; }
+
+.card-content {
+  padding: 10px;
+  display: none; }
+  .card-content.active {
+    display: block; }
+
+.card-content-header,
+.add-comment-header,
+.check-list-header {
+  padding-left: 30px;
+  padding-top: 3px;
+  margin-bottom: 10px; }
+
+.card-content-header-icon,
+.add-comment-icon,
+.check-list-icon {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.add-comment-body {
+  padding-left: 30px; }
+
+.add-comment-message {
+  height: 75px;
+  width: 100%;
+  padding: 5px 10px;
+  margin-bottom: 5px; }
+
+.check-list {
+  padding-left: 30px; }
+
+.check-list-item {
+  margin-bottom: 5px; }
+
+.check-list-edit,
+.check-list-delete {
+  margin-left: 10px; }
+
+.add-comment-section,
+.check-list-section {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.store-card-section,
+.edit-card-section {
+  padding: 10px;
+  margin-bottom: 0;
+  margin-top: 10px;
+  display: none; }
+  .store-card-section.active,
+  .edit-card-section.active {
+    display: block; }
+
+.icon, .new-board-hide, .board-star, .list-options-btn, .edit-card, .delete-card, .card-content-hide, .check-list-edit,
+.check-list-delete {
   cursor: pointer;
   text-align: center; }
-  .icon--sm, .new-board-hide, .board-star {
-    width: 25px;
-    height: 25px;
-    line-height: 25px; }
+
+.icon-rounded {
+  border-radius: 4px; }
+
+.icon-sm, .new-board-hide, .board-star, .list-options-btn, .card-content-header-icon,
+.add-comment-icon,
+.check-list-icon, .card-content-hide, .check-list-edit,
+.check-list-delete {
+  width: 25px;
+  height: 25px;
+  line-height: 25px; }
+
+.icon-sm-fh, .edit-card, .delete-card {
+  width: 25px;
+  height: 100%; }
+  .icon-sm-fh:after, .edit-card:after, .delete-card:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; }
+  .icon-sm-fh:before, .edit-card:before, .delete-card:before {
+    display: inline-block;
+    vertical-align: middle; }
 
 .plc--c, .board, .board:focus, .board:hover {
   color: #fff; }
@@ -8193,7 +8512,7 @@ a:focus {
 .slc--c {
   color: #E2E4E6; }
 
-.slc--bg, .new-board-show {
+.slc--bg, .new-board-show, .list, .card-content {
   background-color: #E2E4E6; }
 
 .slc--bd {
@@ -8232,10 +8551,51 @@ a:focus {
 .pdc--bdl {
   border-left-top: #0079bf; }
 
+.sdc--c, .card, .card .card-name:hover, .edit-card,
+.delete-card,
+.list-options-btn, .edit-card:hover,
+.delete-card:hover,
+.list-options-btn:hover, .create-card, .create-card:hover, .create-card:focus {
+  color: #636b6f; }
+
+.sdc--bg {
+  background-color: #636b6f; }
+
+.sdc--bd {
+  border-color: #636b6f; }
+
+.sdc--bdt {
+  border-top-top: #636b6f; }
+
+.sdc--bdr {
+  border-right-top: #636b6f; }
+
+.sdc--bdb {
+  border-bottom-top: #636b6f; }
+
+.sdc--bdl {
+  border-left-top: #636b6f; }
+
 .board:hover {
   background-color: #00598c; }
 
 .new-board-show:hover {
   background-color: #c7cbce; }
+
+.card .card-name:hover {
+  background-color: #f0f1f2; }
+
+.edit-card:hover,
+.delete-card:hover,
+.list-options-btn:hover {
+  background-color: #f0f1f2; }
+
+.add-comment-btn {
+  background-color: #d4d7da; }
+  .add-comment-btn:hover {
+    background-color: #f0f1f2; }
+
+.create-card:hover {
+  background-color: #f0f1f2; }
 
 /*# sourceMappingURL=app.css.map */

@@ -13,9 +13,9 @@ class BoardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $boards = Board::all();
+        $boards = Board::where('user_id', $request->user()->id)->get();
         return view('boards/index', compact('boards'));
     }
 

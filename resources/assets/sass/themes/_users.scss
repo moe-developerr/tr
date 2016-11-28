@@ -25,6 +25,15 @@
 	@include m('bdb') { border-bottom-top: $p-d-c; }
 	@include m('bdl') { border-left-top: $p-d-c; }
 }
+.sdc {
+	@include m('c') { color: $s-d-c; }
+	@include m('bg') { background-color: $s-d-c; }
+	@include m('bd') { border-color: $s-d-c; }
+	@include m('bdt') { border-top-top: $s-d-c; }
+	@include m('bdr') { border-right-top: $s-d-c; }
+	@include m('bdb') { border-bottom-top: $s-d-c; }
+	@include m('bdl') { border-left-top: $s-d-c; }
+}
 .board {
 	&,
 	&:focus {
@@ -44,4 +53,36 @@
 }
 .new-board-header {
 	@extend .slc--bdb;
+}
+.list {
+	@extend .slc--bg;
+}
+.card {
+	@extend .sdc--c;
+}
+.card .card-name {
+	&:hover {
+		@extend .sdc--c;
+		background-color: lighten($s-l-c, 5%);
+	}
+}
+.edit-card,
+.delete-card,
+.list-options-btn {
+	@extend .sdc--c;
+	&:hover {
+		@extend .sdc--c;
+		background-color: lighten($s-l-c, 5%);
+	}
+}
+.add-comment-btn {
+	background-color: darken($s-l-c, 5%);
+	&:hover { background-color: lighten($s-l-c, 5%); }
+}
+.card-content { @extend .slc--bg; }
+.create-card {
+	@extend .sdc--c;
+	&:hover,
+	&:focus { @extend .sdc--c; }
+	&:hover { background-color: lighten($s-l-c, 5%); }
 }

@@ -7,6 +7,7 @@
 
 require('./bootstrap');
 require('./components/board.js');
+require('./components/card.js');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

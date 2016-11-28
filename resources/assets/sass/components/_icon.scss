@@ -1,17 +1,50 @@
 .icon {
 	cursor: pointer;
 	text-align: center;
-	@include m('sm') {
-		width: 25px;
-	  height: 25px;
-	  line-height: 25px;
+}
+.icon-rounded {
+	border-radius: 4px;
+}
+.icon-sm {
+	width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+.icon-sm-fh {
+	width: 25px;
+	height: 100%;
+	&:after {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
 	}
-	@include m('hide') {
-		@extend .fa;
-		@extend .fa-times;
+	&:before {
+		display: inline-block;
+		vertical-align: middle;
 	}
-	@include m('ellipsis-h') {
-		@extend .fa;
-		@extend .fa-ellipsis-h;
-	}
+}
+.icon-hide {
+	@extend .fa;
+	@extend .fa-times;
+}
+.icon-ellipsis-h {
+	@extend .fa;
+	@extend .fa-ellipsis-h;
+}
+.icon-pen {
+	@extend .fa;
+	@extend .fa-pencil-square;
+}
+.icon-window {
+	@extend .fa;
+	@extend .fa-window-maximize;
+}
+.icon-comment {
+	@extend .fa;
+	@extend .fa-comment-o;
+}
+.icon-check {
+	@extend .fa;
+	@extend .fa-check-square-o;
 }

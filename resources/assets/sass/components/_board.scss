@@ -31,8 +31,8 @@
 
 .new-board-hide {
   @extend .icon;
-  @extend .icon--sm;
-  @extend .icon--hide;
+  @extend .icon-sm;
+  @extend .icon-hide;
   float: right;
 }
 
@@ -48,7 +48,7 @@
 
 .board-star {
   @extend .icon;
-  @extend .icon--sm;
+  @extend .icon-sm;
 	float: right;
   opacity: 0.5;
   transform: scale(1);

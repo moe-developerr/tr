@@ -1,0 +1,155 @@
+.card {
+	@extend .panel;
+	@extend .clearfix;
+	@extend .transition--f;
+	@extend .position--r;
+	display: block;
+	padding-right: 50px;	
+	margin-bottom: 10px;
+	border: none;
+
+	&:last-child { margin-bottom: 0; }
+}
+
+.card .card-name {
+	border-radius: 4px 0 0 4px;
+}
+
+.create-card {
+	border-radius: 4px;
+}
+
+.card .card-name,
+.create-card {
+	display: block;
+	padding: 5px;
+}
+
+.edit-card {
+	@extend .icon;
+	@extend .icon-sm-fh;
+	@extend .icon-pen;
+	@extend .z-index--t;
+	border-radius: 0 4px 4px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-left: 0;
+}
+
+.delete-card {
+	@extend .icon;
+	@extend .icon-sm-fh;
+	@extend .icon-hide;
+	@extend .z-index--t;
+	position: absolute;
+	right: 25px;
+	top: 0;
+	margin-left: 0;
+}
+
+.card-content {
+	@extend .panel;
+	padding: 10px;
+	display: none;
+	&.active { display: block; }
+}
+
+.card-content-header,
+.add-comment-header,
+.check-list-header {
+	@extend .position--r;
+	padding-left: 30px;
+	padding-top: 3px;
+	margin-bottom: 10px;
+}
+
+.card-content-header-icon,
+.add-comment-icon,
+.check-list-icon {
+	@extend .text-center;
+	@extend .icon-sm;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.card-content-header-icon { @extend .icon-window; }
+
+.add-comment-icon { @extend .icon-comment; }
+
+.check-list-icon {
+	@extend .text-center;
+	@extend .icon-sm;
+	@extend .icon-check;
+}
+
+.card-content-hide {
+	@extend .icon;
+	@extend .icon-sm;
+	@extend .icon-hide;
+	@extend .pull-right;
+	@extend .position--r;
+	@extend .z-index--t;
+}
+
+.add-comment-body {
+	padding-left: 30px;
+}
+
+.add-comment-message {
+	@extend .border--r-sm;
+	height: 75px;
+	width: 100%;
+	padding: 5px 10px;
+	margin-bottom: 5px;
+}
+
+.add-comment-btn {
+	@extend .btn;
+}
+
+.check-list-icon {
+	@extend .icon-check;
+}
+
+.check-list {
+	@extend .list-unstyled;
+	padding-left: 30px;
+}
+
+.check-list-item {
+	margin-bottom: 5px;
+}
+
+.check-list-edit,
+.check-list-delete {
+	@extend .pull-right;
+	@extend .icon;
+	@extend .icon-sm;
+	margin-left: 10px;
+}
+
+.check-list-edit {
+	@extend .icon-pen;
+}
+
+.check-list-delete {
+	@extend .icon-hide;
+}
+
+.add-comment-section,
+.check-list-section {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.store-card-section,
+.edit-card-section {
+	@extend .panel;
+	padding: 10px;
+	margin-bottom: 0;
+	margin-top: 10px;
+	display: none;
+	&.active { display: block; }
+}

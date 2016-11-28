@@ -1,3 +1,26 @@
+.lists-list {
+	@extend .list-unstyled;
+	@extend .clearfix;
+}
+
+.list-item {
+	@extend .col-sm-3;
+}
+
+.list-header {
+	@extend .clearfix;
+	position: relative;
+	margin-bottom: 10px;
+}
+
 .list {
-	
+	@extend .panel;
+	padding: 10px;
+}
+
+.list-options-btn {
+	@extend .icon;
+	@extend .icon-sm;
+	@extend .icon-ellipsis-h;
+	@extend .pull-right;
 }

@@ -4,3 +4,15 @@
 .position {
 	@include m('r') { position: relative; }
 }
+.z-index {
+	@include m('t') { z-index: 1; }
+}
+.transition {
+	@include m('f') { transition: all $f-t; }
+	@include m('s') { transition: all $s-t; }
+}
+.border {
+	@include m('r') {
+		&-sm { border-radius: 4px; }
+	}
+}
