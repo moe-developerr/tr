@@ -11,7 +11,7 @@
   transition: background-color $f-t;
 }
 
-.new-board-show {
+.create-board-show {
   @extend .panel;
   @extend .min--h-100;
   cursor: pointer;
@@ -19,7 +19,7 @@
   transition: background-color $f-t;
 }
 
-.new-board-form {
+.create-board-form {
   @extend .panel;
   padding: 10px;
   opacity: 0;
@@ -29,24 +29,25 @@
   }
 }
 
-.new-board-hide {
+.create-board-hide {
   @extend .icon;
   @extend .icon-sm;
   @extend .icon-hide;
   float: right;
 }
 
-.new-board-header {
+.create-board-header {
   @extend .clearfix;
   text-align: center;
   border-bottom: 1px solid;
 }
 
-.new-board-body {
+.create-board-body {
   padding-top: 10px;
 }
 
-.board-star {
+.favorite-board,
+.delete-board {
   @extend .icon;
   @extend .icon-sm;
 	float: right;
@@ -58,4 +59,25 @@
     opacity: 1;
     transform: scale(1.2);
   }
+}
+
+.favorite-board {
+  @extend .fa;
+  @extend .fa-star-o;
+}
+
+.delete-board {
+  @extend .fa;
+  @extend .fa-times;
+}
+
+.board-name { cursor: pointer; }
+
+.rename-board {
+  @extend .btn;
+  @extend .btn-default;
+  display: none;
+  margin-left: 10px;
+
+  &.is-shown { display: inline-block; }
 }

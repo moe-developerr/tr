@@ -45,20 +45,29 @@
 		background-color: darken($p-d-c, 10%);
   }
 }
-.new-board-show {
+.create-board-show {
 	@extend .slc--bg;
 	&:hover {
 		background-color: darken($s-l-c, 10%);
   }
 }
-.new-board-header {
+.create-board-header,
+.create-card-header,
+.edit-card-header,
+.create-list-header {
 	@extend .slc--bdb;
 }
-.list {
+.list,
+.create-list {
 	@extend .slc--bg;
 }
+.create-list-form {
+	@extend .plc--bg;
+}
 .card {
-	@extend .sdc--c;
+	&,
+	&:hover,
+	&:focus { @extend .sdc--c; }
 }
 .card .card-name {
 	&:hover {
@@ -68,7 +77,7 @@
 }
 .edit-card,
 .delete-card,
-.list-options-btn {
+.delete-list {
 	@extend .sdc--c;
 	&:hover {
 		@extend .sdc--c;
@@ -80,7 +89,8 @@
 	&:hover { background-color: lighten($s-l-c, 5%); }
 }
 .card-content { @extend .slc--bg; }
-.create-card {
+.create-card,
+.create-list {
 	@extend .sdc--c;
 	&:hover,
 	&:focus { @extend .sdc--c; }

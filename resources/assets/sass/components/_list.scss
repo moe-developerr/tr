@@ -1,9 +1,9 @@
-.lists-list {
+.lists {
 	@extend .list-unstyled;
 	@extend .clearfix;
 }
 
-.list-item {
+.list-wrapper {
 	@extend .col-sm-3;
 }
 
@@ -18,9 +18,44 @@
 	padding: 10px;
 }
 
-.list-options-btn {
+.list-header .list-name { cursor: pointer; }
+
+.delete-list,
+.create-list-hide {
 	@extend .icon;
 	@extend .icon-sm;
-	@extend .icon-ellipsis-h;
+	@extend .icon-hide;
 	@extend .pull-right;
 }
+
+.rename-list {
+	@extend .btn;
+	@extend .btn-default;
+	margin-left: 10px;
+	display: none;
+
+	&.is-shown { display: inline-block; }
+}
+
+.create-list {
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+.create-list-form {
+	@extend .panel;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 0;
+	display: none;
+	
+	&.is-shown { display: block; }
+}
+
+.create-list-header {
+	@extend .clearfix;
+	border-bottom: 1px solid;
+}
+
+.create-list-body {	margin-top: 10px; }

@@ -1,5 +1,5 @@
 (function () {
-	var $editCardSection = $('.edit-card-section');
+	var $editCardForm = $('.edit-card-form');
 	activate();
 
 	function activate()
@@ -9,65 +9,95 @@
 
 	function addEvents()
 	{
-		$('.create-card').click(toggleAddCard);
-		$('.store-card').click(storeCard);
-		$('.edit-card').click(toggleEditCard);	
-		$('.delete-card').click(toggleDeleteCard);	
+		$('#board').on('click', '.create-card', showCreate);
+		$('#board').on('click', '.create-card-hide', hideCreate);
+		$('#board').on('click', '.store-card', store);
+		$('#board').on('click', '.edit-card', showEdit);
+		$('#board').on('click', '.edit-card-hide', hideEdit);
+		$('#board').on('click', '.update-card', update);
+		$('#board').on('click', '.delete-card', _delete);
 	}
 
-	function storeCard()
+	function hideCreate()	{ $(this).closest('.create-card-form').removeClass('active');	}
+
+	function hideEdit()	{ $('.edit-card-form').removeClass('active');	}
+
+	function update()
 	{
+		var url = $(this).attr('data-href');
+		$.ajax({
+			url: url,
+			method: 'PATCH',
+			data: {
+				_token: $('meta[name="csrf-token"]').attr('content'),
+				name: $(this).closest('.edit-card-form').find('.card-name').val()
+			},
+			error: function (e) { console.log(e.statusText) },
+			success: function (r) {
+				hideEdit();
+				$('.card[href="' + url + '"] .card-name').text(r.message);
+			}
+		});
+	}
+
+	function store()
+	{
+		var $list = $(this).closest('.list');
 		$.ajax({
 			url: '/cards',
 			method: 'POST',
 			data: {
 				_token: $('meta[name="csrf-token"]').attr('content'),
-				name: $(this).closest('.store-card-section').find('.card-name').val(),
-				list_id: $(this).closest('.list').attr('data-id'),
-				order: ($(this).closest('.list').find('.card').length + 1)
+				name: $(this).closest('.create-card-form').find('.card-name').val(),
+				list_id: $list.attr('data-list-id'),
+				order: ($list.find('.card').length + 1)
 			},
 			error:  function (r) {
 				console.log('Error: ' + r.statusText);
 			},
 			success: function (r) {
-				console.log(r);
+				if(r.status == 'success') {
+					hideCreate();
+					var card = '<a href="' + r.message.href + '" class="card"><span class="card-name">' + r.message.name + '</span><span class="edit-card"></span><span class="delete-card"></span></a>';
+					$list.find('.create-card').before(card);
+				}
 			}
 		});
 	}
 
-	function toggleAddCard(e)
+	function showCreate(e)
 	{
 		e.preventDefault();
 		e.stopPropagation();
-		$(this).next('.store-card-section').toggleClass('active');
+		$(this).next('.create-card-form').addClass('active');
 	}
 
-	function toggleEditCard(e)
+	function showEdit(e)
 	{
 		e.preventDefault();
 		e.stopPropagation();
 		var cardName = $(this).closest('.card').find('.card-name').text();
-		$editCardSection.find('.card-name').val(cardName);
-		$editCardSection.addClass('active');
+		$editCardForm.find('.card-name').val(cardName);
+		$editCardForm.addClass('active')
+			.find('.update-card').attr('data-href', $(this).closest('.card').attr('href'));
 	}
 
-	function toggleDeleteCard(e)
+	function _delete(e)
 	{
 		e.preventDefault();
 		e.stopPropagation();
-		cardLink = $(this).closest('.card').attr('href');
+		var $card = $(this).closest('.card');
 		$.ajax({
-			url: cardLink,
-			method: 'POST',
-			data: {
-				_token: $('meta[name="csrf-token"]').attr('content'),
-				_method: 'DELETE'
-			},
+			url: $card.attr('href'),
+			method: 'DELETE',
+			data: { _token: $('meta[name="csrf-token"]').attr('content') },
 			error:  function (r) {
 				console.log('Error: ' + r.statusText);
 			},
 			success: function (r) {
-				if(r.status == 'success') console.log('card deleted: ' + r.message);
+				if(r.status == 'success') {
+					$card.remove();
+				}
 			}
 		});
 	}

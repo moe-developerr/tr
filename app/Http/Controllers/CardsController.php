@@ -40,7 +40,10 @@ class CardsController extends Controller
         $card->name = $request->name;
         $card->order = $request->order;
         $card->save();
-        return $card;
+        return response(['message' => [
+            'name' => $card->name,
+            'href' => '/cards/' . $card->id
+        ], 'status' => 'success']);
     }
 
     /**
@@ -74,7 +77,10 @@ class CardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $card = Card::findOrFail($id);
+        $card->name = $request->name;
+        $card->save();
+        return response(['message' => $request->name, 'status' => 'success']);
     }
 
     /**

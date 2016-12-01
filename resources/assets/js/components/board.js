@@ -1,26 +1,31 @@
 (function () {
 	activate();
 
-	function activate()
-	{
-		attachEvents();
-	}
-
+	function activate() { attachEvents();	}
+	
 	function attachEvents()
 	{
-		$('.board-star').click(toggleFavorite);
-		$('.new-board-show').click(showNewBoardForm);
-		$('.new-board-hide').click(hideNewBoardForm);
+		$('.create-board-show').click(create);
+		$('.create-board-hide').click(hideCreate);
+		$('.board-name').click(edit);
+		$('.favorite-board').click(toggleFavorite);
+		$('.rename-board').click(update);
+		$('.delete-board').click(_delete);
 	}
 
-	function showNewBoardForm()
+	function create() { $('.create-board-form').addClass('active'); }
+	function hideCreate()	{	$('.create-board-form').removeClass('active'); }
+
+	function edit()
 	{
-		$('.new-board-form').addClass('active');
+		$(this).attr('contenteditable', '');
+		$('.rename-board').addClass('is-shown');
 	}
 
-	function hideNewBoardForm()
+	function hideEdit()
 	{
-		$('.new-board-form').removeClass('active');
+		$(this).removeAttr('contenteditable');
+		$('.rename-board').removeClass('is-shown');
 	}
 
 	function toggleFavorite(e)
@@ -40,15 +45,11 @@
 			url: $star.closest('.board').attr('href'),
 			method: 'PATCH',
 			data: {
-				_token: $star.attr('data-token'),
+				_token: $('meta[name="csrf-token"]').attr('content'),
 				is_favorite: 1
 			},
-			error: function (e) {
-				console.log(e.statusText);
-			},
-			success: function (r) {
-				console.log(r);
-			}
+			error: function (e) { console.log(e.statusText); },
+			success: function (r) { console.log(r); }
 		});
 	}
 
@@ -59,14 +60,45 @@
 			url: $star.closest('.board').attr('href'),
 			method: 'PATCH',
 			data: {
-				_token: $star.attr('data-token'),
+				_token: $('meta[name="csrf-token"]').attr('content'),
 				is_favorite: 0
 			},
-			error: function (e) {
-				console.log(e.statusText);
+			error: function (e) { console.log(e.statusText); },
+			success: function (r) { console.log(r); }
+		});
+	}
+
+	function update()
+	{
+		$.ajax({
+			url: $('#board').attr('data-board-id'),
+			method: 'PATCH',
+			data: {
+				_token: $('meta[name="csrf-token"]').attr('content'),
+				name: $('.board-name').text()
 			},
+			error: function (e) { console.log(e.statusText); },
+			success: function (r) { if(r.status == 'success') hideEdit(); }
+		});
+	}
+
+	function _delete(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+		var $board = $(this).closest('.board');
+		$.ajax({
+			url: $board.attr('href'),
+			method: 'DELETE',
+			data: { _token: $('meta[name="csrf-token"]').attr('content') },
+			error: function (e) { console.log(e.statusText); },
 			success: function (r) {
-				console.log(r);
+				if(r.status == 'success') {
+					$board.parent('.board-wrapper')
+						.slideUp(300, function () {
+							$(this).remove();
+						});
+				}
 			}
 		});
 	}

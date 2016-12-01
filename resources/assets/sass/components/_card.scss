@@ -84,7 +84,9 @@
 	@extend .icon-check;
 }
 
-.card-content-hide {
+.card-content-hide,
+.create-card-hide,
+.edit-card-hide {
 	@extend .icon;
 	@extend .icon-sm;
 	@extend .icon-hide;
@@ -138,18 +140,29 @@
 	@extend .icon-hide;
 }
 
-.add-comment-section,
-.check-list-section {
+.add-comment-form,
+.check-list-form {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.store-card-section,
-.edit-card-section {
+.create-card-form,
+.edit-card-form {
 	@extend .panel;
 	padding: 10px;
 	margin-bottom: 0;
 	margin-top: 10px;
 	display: none;
 	&.active { display: block; }
+}
+
+.create-card-header,
+.edit-card-header {
+	@extend .clearfix;
+	border-bottom: 1px solid;
+}
+
+.create-card-body,
+.edit-card-body {
+	margin-top: 10px;
 }

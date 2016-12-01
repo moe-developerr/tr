@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use App\Board;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class BoardsController extends Controller
@@ -13,9 +14,9 @@ class BoardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $boards = Board::where('user_id', $request->user()->id)->get();
+        $boards = Board::where('user_id', Auth::id())->get();
         return view('boards/index', compact('boards'));
     }
 
@@ -52,7 +53,7 @@ class BoardsController extends Controller
      */
     public function show($id)
     {
-        $board = Board::findOrFail($id);
+        $board = Board::where('user_id', Auth::id())->where('id', $id)->firstOrFail();
         return view('boards/show', compact('board'));
     }
 
@@ -77,8 +78,11 @@ class BoardsController extends Controller
     public function update(Request $request, $id)
     {
         $board = Board::findOrFail($id);
-        $board->is_favorite = $request->is_favorite;
+        if(isset($request->is_favorite)) $board->is_favorite = $request->is_favorite;
+        if(isset($request->name)) $board->name = $request->name;
+
         $board->save();
+        return response(['status' => 'success']);
     }
 
     /**
@@ -89,6 +93,7 @@ class BoardsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Board::findOrFail($id)->delete();
+        return response(['status' => 'success']);
     }
 }
