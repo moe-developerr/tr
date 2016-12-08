@@ -6,6 +6,14 @@
         <div class="col-xs-12">
             <span class="board-name">{{ $board->name }}</span>
             <button class="rename-board">Rename</button>
+            <div class="row">
+                <div class="col-sm-3">
+                    <select name="visibility" id="" class="board-visibility">
+                        <option value="private" {{ $board->visibility == 'private' ? 'selected' : '' }}>Private</option>
+                        <option value="public" {{ $board->visibility == 'public' ? 'selected' : '' }}>Public</option>
+                    </select>
+                </div>
+            </div>
         </div>
     	<div class="col-xs-12">
             <ul class="lists row">

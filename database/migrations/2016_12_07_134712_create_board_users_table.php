@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListsTable extends Migration
+class CreateBoardUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class CreateListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lists', function (Blueprint $table) {
+        Schema::create('board_users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->integer('board_id')->unsigned();
-            $table->string('name');
-            $table->integer('order');
+            $table->integer('is_favorite')->default(0);
+            $table->boolean('can_create')->default(1);
+            $table->boolean('can_update')->default(1);
+            $table->boolean('can_delete')->default(1);
+            $table->boolean('can_change_settings')->default(1);
             $table->timestamps();
-            $table->softDeletes();
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('board_id')->references('id')->on('boards')->onDelete('cascade')->onUpdate('cascade');
         });
     }
@@ -32,6 +36,6 @@ class CreateListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lists');
+        Schema::dropIfExists('board_users');
     }
 }

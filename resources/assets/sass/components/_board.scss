@@ -81,3 +81,7 @@
 
   &.is-shown { display: inline-block; }
 }
+
+.board-visibility {
+  @extend .form-control;
+}

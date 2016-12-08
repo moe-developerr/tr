@@ -15,12 +15,11 @@ class CreateBoardsTable extends Migration
     {
         Schema::create('boards', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
             $table->string('name');
-            $table->integer('is_favorite')->default(0);
+            $table->boolean('is_private')->default(1);
+            $table->boolean('public_comments')->default(0);
+            $table->boolean('member_comments')->default(1);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

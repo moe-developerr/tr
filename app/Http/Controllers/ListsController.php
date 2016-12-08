@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\ListModel;
-use App\Board;
 use Illuminate\Http\Request;
 
 class ListsController extends Controller
@@ -36,13 +35,13 @@ class ListsController extends Controller
      */
     public function store(Request $request)
     {
-        $list = new ListModel;
-        if(isset($request->name)) $list->name = $request->name;
-        if(isset($request->order)) $list->order = $request->order;
-        if(isset($request->board_id)) $list->board_id = $request->board_id;
-
-        if($list->board->user_id == $request->user()->id) {
+        if(!empty(auth()->user()->boards()->findOrFail($request->board_id))) {
+            $list = new ListModel;
+            if(isset($request->name)) $list->name = $request->name;
+            if(isset($request->order)) $list->order = $request->order;
+            if(isset($request->board_id)) $list->board_id = $request->board_id;
             $list->save();
+            $list->users()->attach(auth()->id());
             return response([
                 'list' => [
                     'id' => $list->id,
@@ -85,9 +84,11 @@ class ListsController extends Controller
     public function update(Request $request, $id)
     {
         $list = ListModel::findOrFail($id);
-        if(isset($request->name)) $list->name = $request->name;
-        $list->save();
-        return response(['status' => 'success']);
+        if(auth()->user()->boards()->findOrFail($list->board_id)) {
+            if(isset($request->name)) $list->name = $request->name;
+            $list->save();
+            return response(['status' => 'success']);
+        }
     }
 
     /**
@@ -99,9 +100,7 @@ class ListsController extends Controller
     public function destroy($id)
     {
         $list = ListModel::findOrFail($id);
-        $listBelongToAuthUser = ($list->board->user_id == Auth::id());
-
-        if($listBelongToAuthUser) {
+        if(auth()->user()->boards()->findOrFail($list->board_id)) {
             $list->delete();
             return response(['status' => 'success']);
         }

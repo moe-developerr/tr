@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    function boards()
+    {
+        return $this->belongsToMany('App\Board', 'board_users')->withPivot('is_favorite', 'can_create', 'can_update', 'can_delete', 'can_change_settings')->withTimestamps();
+    }
 }

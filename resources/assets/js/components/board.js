@@ -5,11 +5,12 @@
 	
 	function attachEvents()
 	{
+		$('.board-visibility').change(updateVisiblity);
 		$('.create-board-show').click(create);
 		$('.create-board-hide').click(hideCreate);
 		$('.board-name').click(edit);
 		$('.favorite-board').click(toggleFavorite);
-		$('.rename-board').click(update);
+		$('.rename-board').click(updateName);
 		$('.delete-board').click(_delete);
 	}
 
@@ -44,10 +45,7 @@
 		$.ajax({
 			url: $star.closest('.board').attr('href'),
 			method: 'PATCH',
-			data: {
-				_token: $('meta[name="csrf-token"]').attr('content'),
-				is_favorite: 1
-			},
+			data: { is_favorite: 1 },
 			error: function (e) { console.log(e.statusText); },
 			success: function (r) { console.log(r); }
 		});
@@ -59,26 +57,33 @@
 		$.ajax({
 			url: $star.closest('.board').attr('href'),
 			method: 'PATCH',
-			data: {
-				_token: $('meta[name="csrf-token"]').attr('content'),
-				is_favorite: 0
-			},
+			data: { is_favorite: 0 },
 			error: function (e) { console.log(e.statusText); },
 			success: function (r) { console.log(r); }
 		});
 	}
 
-	function update()
+	function updateName()
 	{
 		$.ajax({
 			url: $('#board').attr('data-board-id'),
 			method: 'PATCH',
 			data: {
-				_token: $('meta[name="csrf-token"]').attr('content'),
 				name: $('.board-name').text()
 			},
 			error: function (e) { console.log(e.statusText); },
-			success: function (r) { if(r.status == 'success') hideEdit(); }
+			success: function (r) { console.log(r);if(r.status == 'success') hideEdit(); }
+		});
+	}
+
+	function updateVisiblity()
+	{
+		$.ajax({
+			url: '/boards/' + $('#board').attr('data-board-id'),
+			method: 'PATCH',
+			data: { visibility: $(this).val() },
+			error: function (e) { console.log(e.statusText); },
+			success: function (r) { console.log(r); }
 		});
 	}
 
@@ -90,7 +95,6 @@
 		$.ajax({
 			url: $board.attr('href'),
 			method: 'DELETE',
-			data: { _token: $('meta[name="csrf-token"]').attr('content') },
 			error: function (e) { console.log(e.statusText); },
 			success: function (r) {
 				if(r.status == 'success') {

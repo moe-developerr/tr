@@ -10,4 +10,9 @@ class Board extends Model
     {
     	return $this->hasMany('App\ListModel');
     }
+
+    function users()
+    {
+    	return $this->belongsToMany('App\User', 'board_users')->withPivot('is_favorite', 'can_create', 'can_update', 'can_delete', 'can_change_settings')->withTimestamps();
+    }
 }

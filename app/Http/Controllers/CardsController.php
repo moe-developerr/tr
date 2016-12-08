@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Card;
+use App\ListModel;
 use Illuminate\Http\Request;
 
 class CardsController extends Controller
@@ -35,6 +36,11 @@ class CardsController extends Controller
      */
     public function store(Request $request)
     {
+        // 3 queries
+        $board = auth()->user()->boards();
+        $boardId = ListModel::findOrFail($request->list_id);
+
+        
         $card = new Card;
         $card->list_id = $request->list_id;
         $card->name = $request->name;

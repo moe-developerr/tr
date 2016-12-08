@@ -10,7 +10,12 @@ class ListModel extends Model
 
 	function board()
 	{
-		return $this->belongsTo('App\Board', 'board_id');
+		return $this->belongsTo('App\Board');
+	}
+
+	function users()
+	{
+		return $this->belongsToMany('App\User', 'list_users', 'list_id')->withTimestamps();
 	}
 
 	function cards()
