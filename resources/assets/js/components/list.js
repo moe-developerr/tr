@@ -11,7 +11,7 @@
 		$('.create-list').click(create);
 		$('.create-list-hide').click(hideCreate);
 		$('.store-list').click(store);
-		$('#board').on('click', '.list-name', edit);
+		$('#board').on('click', '.list-header .list-name', edit);
 		$('#board').on('click', '.rename-list', update);
 		$('#board').on('click', '.delete-list', _delete);
 	}

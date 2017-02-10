@@ -13,7 +13,8 @@
   font-weight: normal;
   font-style: normal; }
 
-.fa, .favorite-board, .delete-board, .icon-hide, .create-board-hide, .delete-list,
+.fa, .favorite-board, .delete-board, .icon-hide, .create-board-hide,
+.hide-board-settings, .delete-list,
 .create-list-hide, .delete-card, .card-content-hide,
 .create-card-hide,
 .edit-card-hide, .check-list-delete, .icon-ellipsis-h, .icon-pen, .edit-card, .check-list-edit, .icon-window, .card-content-header-icon, .icon-comment, .add-comment-icon, .icon-check, .check-list-icon {
@@ -75,13 +76,15 @@
 .fa-pull-right {
   float: right; }
 
-.fa.fa-pull-left, .fa-pull-left.favorite-board, .fa-pull-left.delete-board, .fa-pull-left.icon-hide, .fa-pull-left.create-board-hide, .fa-pull-left.delete-list,
+.fa.fa-pull-left, .fa-pull-left.favorite-board, .fa-pull-left.delete-board, .fa-pull-left.icon-hide, .fa-pull-left.create-board-hide,
+.fa-pull-left.hide-board-settings, .fa-pull-left.delete-list,
 .fa-pull-left.create-list-hide, .fa-pull-left.delete-card, .fa-pull-left.card-content-hide,
 .fa-pull-left.create-card-hide,
 .fa-pull-left.edit-card-hide, .fa-pull-left.check-list-delete, .fa-pull-left.icon-ellipsis-h, .fa-pull-left.icon-pen, .fa-pull-left.edit-card, .fa-pull-left.check-list-edit, .fa-pull-left.icon-window, .fa-pull-left.card-content-header-icon, .fa-pull-left.icon-comment, .fa-pull-left.add-comment-icon, .fa-pull-left.icon-check, .fa-pull-left.check-list-icon {
   margin-right: .3em; }
 
-.fa.fa-pull-right, .fa-pull-right.favorite-board, .fa-pull-right.delete-board, .fa-pull-right.icon-hide, .fa-pull-right.create-board-hide, .fa-pull-right.delete-list,
+.fa.fa-pull-right, .fa-pull-right.favorite-board, .fa-pull-right.delete-board, .fa-pull-right.icon-hide, .fa-pull-right.create-board-hide,
+.fa-pull-right.hide-board-settings, .fa-pull-right.delete-list,
 .fa-pull-right.create-list-hide, .fa-pull-right.delete-card, .fa-pull-right.card-content-hide,
 .fa-pull-right.create-card-hide,
 .fa-pull-right.edit-card-hide, .fa-pull-right.check-list-delete, .fa-pull-right.icon-ellipsis-h, .fa-pull-right.icon-pen, .fa-pull-right.edit-card, .fa-pull-right.check-list-edit, .fa-pull-right.icon-window, .fa-pull-right.card-content-header-icon, .fa-pull-right.icon-comment, .fa-pull-right.add-comment-icon, .fa-pull-right.icon-check, .fa-pull-right.check-list-icon {
@@ -98,16 +101,58 @@
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.favorite-board, .pull-left.delete-board, .pull-left.icon-hide, .pull-left.create-board-hide, .pull-left.delete-list,
+.fa.pull-left, .pull-left.favorite-board, .pull-left.delete-board, .pull-left.icon-hide, .pull-left.create-board-hide,
+.pull-left.hide-board-settings, .pull-left.delete-list,
 .pull-left.create-list-hide, .pull-left.delete-card, .pull-left.card-content-hide,
 .pull-left.create-card-hide,
 .pull-left.edit-card-hide, .pull-left.check-list-delete, .pull-left.icon-ellipsis-h, .pull-left.icon-pen, .pull-left.edit-card, .pull-left.check-list-edit, .pull-left.icon-window, .pull-left.card-content-header-icon, .pull-left.icon-comment, .pull-left.add-comment-icon, .pull-left.icon-check, .pull-left.check-list-icon {
   margin-right: .3em; }
 
-.fa.pull-right, .pull-right.favorite-board, .pull-right.delete-board, .delete-list,
+.fa.pull-right, .pull-right.favorite-board, .favorite-board.delete-list,
+.favorite-board.create-list-hide, .favorite-board.card-content-hide,
+.favorite-board.create-card-hide,
+.favorite-board.edit-card-hide, .favorite-board.check-list-edit,
+.favorite-board.check-list-delete, .pull-right.delete-board, .delete-board.delete-list,
+.delete-board.create-list-hide, .delete-board.card-content-hide,
+.delete-board.create-card-hide,
+.delete-board.edit-card-hide, .delete-board.check-list-edit,
+.delete-board.check-list-delete, .delete-list,
 .create-list-hide, .card-content-hide,
 .create-card-hide,
-.edit-card-hide, .check-list-edit, .check-list-delete, .pull-right.icon-hide, .pull-right.create-board-hide, .pull-right.delete-card, .pull-right.icon-ellipsis-h, .pull-right.icon-pen, .pull-right.edit-card, .pull-right.icon-window, .pull-right.card-content-header-icon, .pull-right.icon-comment, .pull-right.add-comment-icon, .pull-right.icon-check, .pull-right.check-list-icon {
+.edit-card-hide, .check-list-edit, .check-list-delete, .pull-right.icon-hide, .pull-right.create-board-hide, .create-board-hide.check-list-edit,
+.pull-right.hide-board-settings, .hide-board-settings.check-list-edit, .pull-right.delete-card, .delete-card.check-list-edit, .icon-hide.check-list-edit, .pull-right.icon-ellipsis-h, .icon-ellipsis-h.delete-list,
+.icon-ellipsis-h.create-list-hide, .icon-ellipsis-h.card-content-hide,
+.icon-ellipsis-h.create-card-hide,
+.icon-ellipsis-h.edit-card-hide, .icon-ellipsis-h.check-list-edit,
+.icon-ellipsis-h.check-list-delete, .pull-right.icon-pen, .icon-pen.delete-list, .delete-list.edit-card,
+.icon-pen.create-list-hide, .create-list-hide.edit-card, .pull-right.edit-card, .edit-card.card-content-hide,
+.edit-card.create-card-hide,
+.edit-card.edit-card-hide,
+.edit-card.check-list-delete, .icon-pen.card-content-hide,
+.icon-pen.create-card-hide,
+.icon-pen.edit-card-hide,
+.icon-pen.check-list-delete, .pull-right.icon-window, .icon-window.delete-list, .delete-list.card-content-header-icon,
+.icon-window.create-list-hide, .create-list-hide.card-content-header-icon, .pull-right.card-content-header-icon, .card-content-header-icon.card-content-hide,
+.card-content-header-icon.create-card-hide,
+.card-content-header-icon.edit-card-hide, .card-content-header-icon.check-list-edit,
+.card-content-header-icon.check-list-delete, .icon-window.card-content-hide,
+.icon-window.create-card-hide,
+.icon-window.edit-card-hide, .icon-window.check-list-edit,
+.icon-window.check-list-delete, .pull-right.icon-comment, .icon-comment.delete-list, .delete-list.add-comment-icon,
+.icon-comment.create-list-hide, .create-list-hide.add-comment-icon, .pull-right.add-comment-icon, .add-comment-icon.card-content-hide,
+.add-comment-icon.create-card-hide,
+.add-comment-icon.edit-card-hide, .add-comment-icon.check-list-edit,
+.add-comment-icon.check-list-delete, .icon-comment.card-content-hide,
+.icon-comment.create-card-hide,
+.icon-comment.edit-card-hide, .icon-comment.check-list-edit,
+.icon-comment.check-list-delete, .pull-right.icon-check, .icon-check.delete-list, .delete-list.check-list-icon,
+.icon-check.create-list-hide, .create-list-hide.check-list-icon, .pull-right.check-list-icon, .check-list-icon.card-content-hide,
+.check-list-icon.create-card-hide,
+.check-list-icon.edit-card-hide, .check-list-icon.check-list-edit,
+.check-list-icon.check-list-delete, .icon-check.card-content-hide,
+.icon-check.create-card-hide,
+.icon-check.edit-card-hide, .icon-check.check-list-edit,
+.icon-check.check-list-delete {
   margin-left: .3em; }
 
 .fa-spin {
@@ -238,6 +283,7 @@
 .delete-board:before,
 .icon-hide:before,
 .create-board-hide:before,
+.hide-board-settings:before,
 .delete-list:before,
 .create-list-hide:before,
 .delete-card:before,
@@ -3705,7 +3751,8 @@ ol {
   ol ol {
     margin-bottom: 0; }
 
-.list-unstyled, .board-list, .lists, .check-list {
+.list-unstyled, .board-list, .members,
+.potential-members-list, .lists, .check-list {
   padding-left: 0;
   list-style: none; }
 
@@ -4689,7 +4736,7 @@ output {
   line-height: 1.6;
   color: #555555; }
 
-.form-control, .board-visibility {
+.form-control, .board-visibility, .member-to-invite {
   display: block;
   width: 100%;
   height: 36px;
@@ -4704,46 +4751,51 @@ output {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
-  .form-control:focus, .board-visibility:focus {
+  .form-control:focus, .board-visibility:focus, .member-to-invite:focus {
     border-color: #98cbe8;
     outline: 0;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(152, 203, 232, 0.6); }
-  .form-control::-moz-placeholder, .board-visibility::-moz-placeholder {
+  .form-control::-moz-placeholder, .board-visibility::-moz-placeholder, .member-to-invite::-moz-placeholder {
     color: #b1b7ba;
     opacity: 1; }
-  .form-control:-ms-input-placeholder, .board-visibility:-ms-input-placeholder {
+  .form-control:-ms-input-placeholder, .board-visibility:-ms-input-placeholder, .member-to-invite:-ms-input-placeholder {
     color: #b1b7ba; }
-  .form-control::-webkit-input-placeholder, .board-visibility::-webkit-input-placeholder {
+  .form-control::-webkit-input-placeholder, .board-visibility::-webkit-input-placeholder, .member-to-invite::-webkit-input-placeholder {
     color: #b1b7ba; }
-  .form-control::-ms-expand, .board-visibility::-ms-expand {
+  .form-control::-ms-expand, .board-visibility::-ms-expand, .member-to-invite::-ms-expand {
     border: 0;
     background-color: transparent; }
-  .form-control[disabled], [disabled].board-visibility, .form-control[readonly], [readonly].board-visibility,
+  .form-control[disabled], [disabled].board-visibility, [disabled].member-to-invite, .form-control[readonly], [readonly].board-visibility, [readonly].member-to-invite,
   fieldset[disabled] .form-control,
-  fieldset[disabled] .board-visibility {
+  fieldset[disabled] .board-visibility,
+  fieldset[disabled] .member-to-invite {
     background-color: #eeeeee;
     opacity: 1; }
-  .form-control[disabled], [disabled].board-visibility,
+  .form-control[disabled], [disabled].board-visibility, [disabled].member-to-invite,
   fieldset[disabled] .form-control,
-  fieldset[disabled] .board-visibility {
+  fieldset[disabled] .board-visibility,
+  fieldset[disabled] .member-to-invite {
     cursor: not-allowed; }
 
-textarea.form-control, textarea.board-visibility {
+textarea.form-control, textarea.board-visibility, textarea.member-to-invite {
   height: auto; }
 
 input[type="search"] {
   -webkit-appearance: none; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="date"].form-control, input[type="date"].board-visibility,
+  input[type="date"].form-control, input[type="date"].board-visibility, input[type="date"].member-to-invite,
   input[type="time"].form-control,
   input[type="time"].board-visibility,
+  input[type="time"].member-to-invite,
   input[type="datetime-local"].form-control,
   input[type="datetime-local"].board-visibility,
+  input[type="datetime-local"].member-to-invite,
   input[type="month"].form-control,
-  input[type="month"].board-visibility {
+  input[type="month"].board-visibility,
+  input[type="month"].member-to-invite {
     line-height: 36px; }
-  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .input-group-sm > input[type="date"].board-visibility,
+  input[type="date"].input-sm, .input-group-sm > input[type="date"].form-control, .input-group-sm > input[type="date"].board-visibility, .input-group-sm > input[type="date"].member-to-invite,
   .input-group-sm > input[type="date"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="date"].btn,
   .input-group-sm > .input-group-btn > input[type="date"].rename-board,
@@ -4753,6 +4805,7 @@ input[type="search"] {
   input[type="time"].input-sm,
   .input-group-sm > input[type="time"].form-control,
   .input-group-sm > input[type="time"].board-visibility,
+  .input-group-sm > input[type="time"].member-to-invite,
   .input-group-sm > input[type="time"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="time"].btn,
   .input-group-sm > .input-group-btn > input[type="time"].rename-board,
@@ -4763,6 +4816,7 @@ input[type="search"] {
   input[type="datetime-local"].input-sm,
   .input-group-sm > input[type="datetime-local"].form-control,
   .input-group-sm > input[type="datetime-local"].board-visibility,
+  .input-group-sm > input[type="datetime-local"].member-to-invite,
   .input-group-sm > input[type="datetime-local"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-sm > .input-group-btn > input[type="datetime-local"].rename-board,
@@ -4773,6 +4827,7 @@ input[type="search"] {
   input[type="month"].input-sm,
   .input-group-sm > input[type="month"].form-control,
   .input-group-sm > input[type="month"].board-visibility,
+  .input-group-sm > input[type="month"].member-to-invite,
   .input-group-sm > input[type="month"].input-group-addon,
   .input-group-sm > .input-group-btn > input[type="month"].btn,
   .input-group-sm > .input-group-btn > input[type="month"].rename-board,
@@ -4781,7 +4836,7 @@ input[type="search"] {
   .input-group-sm
   input[type="month"] {
     line-height: 30px; }
-  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .input-group-lg > input[type="date"].board-visibility,
+  input[type="date"].input-lg, .input-group-lg > input[type="date"].form-control, .input-group-lg > input[type="date"].board-visibility, .input-group-lg > input[type="date"].member-to-invite,
   .input-group-lg > input[type="date"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="date"].btn,
   .input-group-lg > .input-group-btn > input[type="date"].rename-board,
@@ -4791,6 +4846,7 @@ input[type="search"] {
   input[type="time"].input-lg,
   .input-group-lg > input[type="time"].form-control,
   .input-group-lg > input[type="time"].board-visibility,
+  .input-group-lg > input[type="time"].member-to-invite,
   .input-group-lg > input[type="time"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="time"].btn,
   .input-group-lg > .input-group-btn > input[type="time"].rename-board,
@@ -4801,6 +4857,7 @@ input[type="search"] {
   input[type="datetime-local"].input-lg,
   .input-group-lg > input[type="datetime-local"].form-control,
   .input-group-lg > input[type="datetime-local"].board-visibility,
+  .input-group-lg > input[type="datetime-local"].member-to-invite,
   .input-group-lg > input[type="datetime-local"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].btn,
   .input-group-lg > .input-group-btn > input[type="datetime-local"].rename-board,
@@ -4811,6 +4868,7 @@ input[type="search"] {
   input[type="month"].input-lg,
   .input-group-lg > input[type="month"].form-control,
   .input-group-lg > input[type="month"].board-visibility,
+  .input-group-lg > input[type="month"].member-to-invite,
   .input-group-lg > input[type="month"].input-group-addon,
   .input-group-lg > .input-group-btn > input[type="month"].btn,
   .input-group-lg > .input-group-btn > input[type="month"].rename-board,
@@ -4891,12 +4949,12 @@ fieldset[disabled]
   padding-bottom: 7px;
   margin-bottom: 0;
   min-height: 36px; }
-  .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .input-group-lg > .form-control-static.board-visibility,
+  .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control, .input-group-lg > .form-control-static.board-visibility, .input-group-lg > .form-control-static.member-to-invite,
   .input-group-lg > .form-control-static.input-group-addon,
   .input-group-lg > .input-group-btn > .form-control-static.btn,
   .input-group-lg > .input-group-btn > .form-control-static.rename-board,
   .input-group-lg > .input-group-btn > .form-control-static.rename-list,
-  .input-group-lg > .input-group-btn > .form-control-static.add-comment-btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .input-group-sm > .form-control-static.board-visibility,
+  .input-group-lg > .input-group-btn > .form-control-static.add-comment-btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control, .input-group-sm > .form-control-static.board-visibility, .input-group-sm > .form-control-static.member-to-invite,
   .input-group-sm > .form-control-static.input-group-addon,
   .input-group-sm > .input-group-btn > .form-control-static.btn,
   .input-group-sm > .input-group-btn > .form-control-static.rename-board,
@@ -4905,7 +4963,7 @@ fieldset[disabled]
     padding-left: 0;
     padding-right: 0; }
 
-.input-sm, .input-group-sm > .form-control, .input-group-sm > .board-visibility,
+.input-sm, .input-group-sm > .form-control, .input-group-sm > .board-visibility, .input-group-sm > .member-to-invite,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .input-group-sm > .input-group-btn > .rename-board,
@@ -4917,7 +4975,7 @@ fieldset[disabled]
   line-height: 1.5;
   border-radius: 3px; }
 
-select.input-sm, .input-group-sm > select.form-control, .input-group-sm > select.board-visibility,
+select.input-sm, .input-group-sm > select.form-control, .input-group-sm > select.board-visibility, .input-group-sm > select.member-to-invite,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn,
 .input-group-sm > .input-group-btn > select.rename-board,
@@ -4926,7 +4984,7 @@ select.input-sm, .input-group-sm > select.form-control, .input-group-sm > select
   height: 30px;
   line-height: 30px; }
 
-textarea.input-sm, .input-group-sm > textarea.form-control, .input-group-sm > textarea.board-visibility,
+textarea.input-sm, .input-group-sm > textarea.form-control, .input-group-sm > textarea.board-visibility, .input-group-sm > textarea.member-to-invite,
 .input-group-sm > textarea.input-group-addon,
 .input-group-sm > .input-group-btn > textarea.btn,
 .input-group-sm > .input-group-btn > textarea.rename-board,
@@ -4935,6 +4993,7 @@ textarea.input-sm, .input-group-sm > textarea.form-control, .input-group-sm > te
 select[multiple].input-sm,
 .input-group-sm > select[multiple].form-control,
 .input-group-sm > select[multiple].board-visibility,
+.input-group-sm > select[multiple].member-to-invite,
 .input-group-sm > select[multiple].input-group-addon,
 .input-group-sm > .input-group-btn > select[multiple].btn,
 .input-group-sm > .input-group-btn > select[multiple].rename-board,
@@ -4942,20 +5001,21 @@ select[multiple].input-sm,
 .input-group-sm > .input-group-btn > select[multiple].add-comment-btn {
   height: auto; }
 
-.form-group-sm .form-control, .form-group-sm .board-visibility {
+.form-group-sm .form-control, .form-group-sm .board-visibility, .form-group-sm .member-to-invite {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.form-group-sm select.form-control, .form-group-sm select.board-visibility {
+.form-group-sm select.form-control, .form-group-sm select.board-visibility, .form-group-sm select.member-to-invite {
   height: 30px;
   line-height: 30px; }
 
-.form-group-sm textarea.form-control, .form-group-sm textarea.board-visibility,
+.form-group-sm textarea.form-control, .form-group-sm textarea.board-visibility, .form-group-sm textarea.member-to-invite,
 .form-group-sm select[multiple].form-control,
-.form-group-sm select[multiple].board-visibility {
+.form-group-sm select[multiple].board-visibility,
+.form-group-sm select[multiple].member-to-invite {
   height: auto; }
 
 .form-group-sm .form-control-static {
@@ -4965,7 +5025,7 @@ select[multiple].input-sm,
   font-size: 12px;
   line-height: 1.5; }
 
-.input-lg, .input-group-lg > .form-control, .input-group-lg > .board-visibility,
+.input-lg, .input-group-lg > .form-control, .input-group-lg > .board-visibility, .input-group-lg > .member-to-invite,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .input-group-lg > .input-group-btn > .rename-board,
@@ -4977,7 +5037,7 @@ select[multiple].input-sm,
   line-height: 1.3333333;
   border-radius: 6px; }
 
-select.input-lg, .input-group-lg > select.form-control, .input-group-lg > select.board-visibility,
+select.input-lg, .input-group-lg > select.form-control, .input-group-lg > select.board-visibility, .input-group-lg > select.member-to-invite,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn,
 .input-group-lg > .input-group-btn > select.rename-board,
@@ -4986,7 +5046,7 @@ select.input-lg, .input-group-lg > select.form-control, .input-group-lg > select
   height: 46px;
   line-height: 46px; }
 
-textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > textarea.board-visibility,
+textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > textarea.board-visibility, .input-group-lg > textarea.member-to-invite,
 .input-group-lg > textarea.input-group-addon,
 .input-group-lg > .input-group-btn > textarea.btn,
 .input-group-lg > .input-group-btn > textarea.rename-board,
@@ -4995,6 +5055,7 @@ textarea.input-lg, .input-group-lg > textarea.form-control, .input-group-lg > te
 select[multiple].input-lg,
 .input-group-lg > select[multiple].form-control,
 .input-group-lg > select[multiple].board-visibility,
+.input-group-lg > select[multiple].member-to-invite,
 .input-group-lg > select[multiple].input-group-addon,
 .input-group-lg > .input-group-btn > select[multiple].btn,
 .input-group-lg > .input-group-btn > select[multiple].rename-board,
@@ -5002,20 +5063,21 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-btn > select[multiple].add-comment-btn {
   height: auto; }
 
-.form-group-lg .form-control, .form-group-lg .board-visibility {
+.form-group-lg .form-control, .form-group-lg .board-visibility, .form-group-lg .member-to-invite {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px; }
 
-.form-group-lg select.form-control, .form-group-lg select.board-visibility {
+.form-group-lg select.form-control, .form-group-lg select.board-visibility, .form-group-lg select.member-to-invite {
   height: 46px;
   line-height: 46px; }
 
-.form-group-lg textarea.form-control, .form-group-lg textarea.board-visibility,
+.form-group-lg textarea.form-control, .form-group-lg textarea.board-visibility, .form-group-lg textarea.member-to-invite,
 .form-group-lg select[multiple].form-control,
-.form-group-lg select[multiple].board-visibility {
+.form-group-lg select[multiple].board-visibility,
+.form-group-lg select[multiple].member-to-invite {
   height: auto; }
 
 .form-group-lg .form-control-static {
@@ -5027,7 +5089,7 @@ select[multiple].input-lg,
 
 .has-feedback {
   position: relative; }
-  .has-feedback .form-control, .has-feedback .board-visibility {
+  .has-feedback .form-control, .has-feedback .board-visibility, .has-feedback .member-to-invite {
     padding-right: 45px; }
 
 .form-control-feedback {
@@ -5042,7 +5104,7 @@ select[multiple].input-lg,
   text-align: center;
   pointer-events: none; }
 
-.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .input-group-lg > .board-visibility + .form-control-feedback,
+.input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, .input-group-lg > .board-visibility + .form-control-feedback, .input-group-lg > .member-to-invite + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .input-group-lg > .input-group-btn > .rename-board + .form-control-feedback,
@@ -5050,12 +5112,13 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-btn > .add-comment-btn + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback,
-.form-group-lg .board-visibility + .form-control-feedback {
+.form-group-lg .board-visibility + .form-control-feedback,
+.form-group-lg .member-to-invite + .form-control-feedback {
   width: 46px;
   height: 46px;
   line-height: 46px; }
 
-.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .input-group-sm > .board-visibility + .form-control-feedback,
+.input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, .input-group-sm > .board-visibility + .form-control-feedback, .input-group-sm > .member-to-invite + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .input-group-sm > .input-group-btn > .rename-board + .form-control-feedback,
@@ -5063,7 +5126,8 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-btn > .add-comment-btn + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback,
-.form-group-sm .board-visibility + .form-control-feedback {
+.form-group-sm .board-visibility + .form-control-feedback,
+.form-group-sm .member-to-invite + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px; }
@@ -5080,10 +5144,10 @@ select[multiple].input-lg,
 .has-success.checkbox-inline label {
   color: #3c763d; }
 
-.has-success .form-control, .has-success .board-visibility {
+.has-success .form-control, .has-success .board-visibility, .has-success .member-to-invite {
   border-color: #3c763d;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-success .form-control:focus, .has-success .board-visibility:focus {
+  .has-success .form-control:focus, .has-success .board-visibility:focus, .has-success .member-to-invite:focus {
     border-color: #2b542c;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; }
 
@@ -5107,10 +5171,10 @@ select[multiple].input-lg,
 .has-warning.checkbox-inline label {
   color: #8a6d3b; }
 
-.has-warning .form-control, .has-warning .board-visibility {
+.has-warning .form-control, .has-warning .board-visibility, .has-warning .member-to-invite {
   border-color: #8a6d3b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-warning .form-control:focus, .has-warning .board-visibility:focus {
+  .has-warning .form-control:focus, .has-warning .board-visibility:focus, .has-warning .member-to-invite:focus {
     border-color: #66512c;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; }
 
@@ -5134,10 +5198,10 @@ select[multiple].input-lg,
 .has-error.checkbox-inline label {
   color: #a94442; }
 
-.has-error .form-control, .has-error .board-visibility {
+.has-error .form-control, .has-error .board-visibility, .has-error .member-to-invite {
   border-color: #a94442;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
-  .has-error .form-control:focus, .has-error .board-visibility:focus {
+  .has-error .form-control:focus, .has-error .board-visibility:focus, .has-error .member-to-invite:focus {
     border-color: #843534;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; }
 
@@ -5166,7 +5230,7 @@ select[multiple].input-lg,
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle; }
-  .form-inline .form-control, .form-inline .board-visibility {
+  .form-inline .form-control, .form-inline .board-visibility, .form-inline .member-to-invite {
     display: inline-block;
     width: auto;
     vertical-align: middle; }
@@ -5178,9 +5242,10 @@ select[multiple].input-lg,
     .form-inline .input-group .input-group-addon,
     .form-inline .input-group .input-group-btn,
     .form-inline .input-group .form-control,
-    .form-inline .input-group .board-visibility {
+    .form-inline .input-group .board-visibility,
+    .form-inline .input-group .member-to-invite {
       width: auto; }
-  .form-inline .input-group > .form-control, .form-inline .input-group > .board-visibility {
+  .form-inline .input-group > .form-control, .form-inline .input-group > .board-visibility, .form-inline .input-group > .member-to-invite {
     width: 100%; }
   .form-inline .control-label {
     margin-bottom: 0;
@@ -5958,24 +6023,26 @@ tbody.collapse.in {
     float: none;
     padding-left: 0;
     padding-right: 0; }
-  .input-group .form-control, .input-group .board-visibility {
+  .input-group .form-control, .input-group .board-visibility, .input-group .member-to-invite {
     position: relative;
     z-index: 2;
     float: left;
     width: 100%;
     margin-bottom: 0; }
-    .input-group .form-control:focus, .input-group .board-visibility:focus {
+    .input-group .form-control:focus, .input-group .board-visibility:focus, .input-group .member-to-invite:focus {
       z-index: 3; }
 
 .input-group-addon,
 .input-group-btn,
 .input-group .form-control,
-.input-group .board-visibility {
+.input-group .board-visibility,
+.input-group .member-to-invite {
   display: table-cell; }
   .input-group-addon:not(:first-child):not(:last-child),
   .input-group-btn:not(:first-child):not(:last-child),
   .input-group .form-control:not(:first-child):not(:last-child),
-  .input-group .board-visibility:not(:first-child):not(:last-child) {
+  .input-group .board-visibility:not(:first-child):not(:last-child),
+  .input-group .member-to-invite:not(:first-child):not(:last-child) {
     border-radius: 0; }
 
 .input-group-addon,
@@ -6016,7 +6083,7 @@ tbody.collapse.in {
   .input-group-addon input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group .form-control:first-child, .input-group .board-visibility:first-child,
+.input-group .form-control:first-child, .input-group .board-visibility:first-child, .input-group .member-to-invite:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .rename-board,
@@ -6041,7 +6108,7 @@ tbody.collapse.in {
 .input-group-addon:first-child {
   border-right: 0; }
 
-.input-group .form-control:last-child, .input-group .board-visibility:last-child,
+.input-group .form-control:last-child, .input-group .board-visibility:last-child, .input-group .member-to-invite:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .rename-board,
@@ -6393,7 +6460,7 @@ tbody.collapse.in {
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle; }
-    .navbar-form .form-control, .navbar-form .board-visibility {
+    .navbar-form .form-control, .navbar-form .board-visibility, .navbar-form .member-to-invite {
       display: inline-block;
       width: auto;
       vertical-align: middle; }
@@ -6405,9 +6472,10 @@ tbody.collapse.in {
       .navbar-form .input-group .input-group-addon,
       .navbar-form .input-group .input-group-btn,
       .navbar-form .input-group .form-control,
-      .navbar-form .input-group .board-visibility {
+      .navbar-form .input-group .board-visibility,
+      .navbar-form .input-group .member-to-invite {
         width: auto; }
-    .navbar-form .input-group > .form-control, .navbar-form .input-group > .board-visibility {
+    .navbar-form .input-group > .form-control, .navbar-form .input-group > .board-visibility, .navbar-form .input-group > .member-to-invite {
       width: 100%; }
     .navbar-form .control-label {
       margin-bottom: 0;
@@ -8271,13 +8339,13 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.clearfix:before, .board-list:before, .create-board-header:before, .lists:before, .list-header:before, .create-list-header:before, .card:before, .create-card-header:before,
-.edit-card-header:before, .clearfix:after, .board-list:after, .create-board-header:after, .lists:after, .list-header:after, .create-list-header:after, .card:after, .create-card-header:after,
+.clearfix:before, .board-list:before, .create-board-header:before, .board-settings:before, .lists:before, .list-header:before, .create-list-header:before, .card:before, .create-card-header:before,
+.edit-card-header:before, .clearfix:after, .board-list:after, .create-board-header:after, .board-settings:after, .lists:after, .list-header:after, .create-list-header:after, .card:after, .create-card-header:after,
 .edit-card-header:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .board-list:after, .create-board-header:after, .lists:after, .list-header:after, .create-list-header:after, .card:after, .create-card-header:after,
+.clearfix:after, .board-list:after, .create-board-header:after, .board-settings:after, .lists:after, .list-header:after, .create-list-header:after, .card:after, .create-card-header:after,
 .edit-card-header:after {
   clear: both; }
 
@@ -8525,6 +8593,15 @@ a:focus {
 .cursor--pointer {
   cursor: pointer; }
 
+.zero--m {
+  margin: 0; }
+
+.zero--p {
+  padding: 0; }
+
+.zero--mt {
+  margin-top: 0; }
+
 .board {
   display: block;
   padding: 10px;
@@ -8545,7 +8622,8 @@ a:focus {
   .create-board-form.active {
     opacity: 1; }
 
-.create-board-hide {
+.create-board-hide,
+.hide-board-settings {
   float: right; }
 
 .create-board-header {
@@ -8580,6 +8658,43 @@ a:focus {
   margin-left: 10px; }
   .rename-board.is-shown {
     display: inline-block; }
+
+.board-settings {
+  z-index: 2000;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 320px;
+  padding: 10px;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s; }
+  .board-settings.is-shown {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+
+.member,
+.potential-member-to-invite {
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px; }
+
+.invite-members-section {
+  margin-bottom: 5px; }
+
+.potential-members-list {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+.potential-members-list {
+  display: none; }
+  .potential-members-list.is-shown {
+    display: block; }
 
 .list-header {
   position: relative;
@@ -8710,7 +8825,8 @@ a:focus {
 .edit-card-body {
   margin-top: 10px; }
 
-.icon, .create-board-hide, .favorite-board,
+.icon, .create-board-hide,
+.hide-board-settings, .favorite-board,
 .delete-board, .delete-list,
 .create-list-hide, .edit-card, .delete-card, .card-content-hide,
 .create-card-hide,
@@ -8722,7 +8838,8 @@ a:focus {
 .icon-rounded {
   border-radius: 4px; }
 
-.icon-sm, .create-board-hide, .favorite-board,
+.icon-sm, .create-board-hide,
+.hide-board-settings, .favorite-board,
 .delete-board, .delete-list,
 .create-list-hide, .card-content-header-icon,
 .add-comment-icon,
@@ -8746,10 +8863,11 @@ a:focus {
     display: inline-block;
     vertical-align: middle; }
 
-.plc--c, .board, .board:focus, .board:hover {
+.plc--c, .board, .board:focus, .board:hover, .hide-board-settings {
   color: #fff; }
 
-.plc--bg, .create-list-form {
+.plc--bg, .create-list-form, .member:hover,
+.potential-member-to-invite:hover {
   background-color: #fff; }
 
 .plc--bd {
@@ -8771,7 +8889,8 @@ a:focus {
   color: #E2E4E6; }
 
 .slc--bg, .create-board-show, .list,
-.create-list, .card-content {
+.create-list, .card-content, .member,
+.potential-member-to-invite {
   background-color: #E2E4E6; }
 
 .slc--bd {
@@ -8792,10 +8911,11 @@ a:focus {
 .slc--bdl {
   border-left-color: #E2E4E6; }
 
-.pdc--c {
+.pdc--c, .member,
+.potential-member-to-invite {
   color: #0079bf; }
 
-.pdc--bg, .board, .board:focus {
+.pdc--bg, .board, .board:focus, .board-settings {
   background-color: #0079bf; }
 
 .pdc--bd {

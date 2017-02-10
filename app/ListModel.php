@@ -13,11 +13,6 @@ class ListModel extends Model
 		return $this->belongsTo('App\Board');
 	}
 
-	function users()
-	{
-		return $this->belongsToMany('App\User', 'list_users', 'list_id')->withTimestamps();
-	}
-
 	function cards()
 	{
 		return $this->hasMany('App\Card', 'list_id');

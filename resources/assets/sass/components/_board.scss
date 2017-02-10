@@ -29,7 +29,8 @@
   }
 }
 
-.create-board-hide {
+.create-board-hide,
+.hide-board-settings {
   @extend .icon;
   @extend .icon-sm;
   @extend .icon-hide;
@@ -84,4 +85,49 @@
 
 .board-visibility {
   @extend .form-control;
+}
+
+.board-settings {
+  @extend .clearfix;
+  z-index: 2000;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 320px;
+  padding: 10px;
+  transform: translateX(100%);
+  transition: transform $f-t;
+  &.is-shown { transform: translateX(0); }
+}
+
+.members,
+.potential-members-list {
+  @extend .list-unstyled;
+}
+
+.member,
+.potential-member-to-invite {
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.invite-members-section {
+  margin-bottom: 5px;
+}
+
+.member-to-invite {
+  @extend .form-control;
+}
+
+.potential-members-list {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.potential-members-list {
+  display: none;
+  &.is-shown { display: block; }
 }

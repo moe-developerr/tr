@@ -1,4 +1,5 @@
 (function () {
+	var currentSearch, lastSearch;
 	activate();
 
 	function activate() { attachEvents();	}
@@ -12,6 +13,10 @@
 		$('.favorite-board').click(toggleFavorite);
 		$('.rename-board').click(updateName);
 		$('.delete-board').click(_delete);
+		$('.show-board-settings').click(showBoardSettings);
+		$('.hide-board-settings').click(hideBoardSettings);
+		$('.member-to-invite').keyup(getUsers);
+		$('.potential-members-list').on('click', '.potential-member-to-invite', addMember);
 	}
 
 	function create() { $('.create-board-form').addClass('active'); }
@@ -29,6 +34,16 @@
 		$('.rename-board').removeClass('is-shown');
 	}
 
+	function showBoardSettings()
+	{
+		$('.board-settings').addClass('is-shown');
+	}
+
+	function hideBoardSettings()
+	{
+		$('.board-settings').removeClass('is-shown');
+	}
+
 	function toggleFavorite(e)
 	{
 		e.preventDefault();
@@ -37,6 +52,24 @@
 
 		if(!$star.hasClass('active')) addFavorite($star);
 		else removeFavorite($star);
+	}
+
+	function addMember()
+	{
+		var $member = $(this);
+		$.ajax({
+			url: '/boards/' + $('#board').attr('data-board-id') + '/addMember',
+			method: 'POST',
+			data: { id: $member.attr('data-member-id') },
+			error: function (e) { console.log(e.statusText); },
+			success: function (r) {
+				var name = $member.text();
+				var id = $member.attr('data-member-id');
+				var member = '<div class="member" data-member-id="' + id + '"><div class="member-name">' + name + '</div></div>';
+				$(member).appendTo($('.members'));
+				$member.remove();
+			}
+		});
 	}
 
 	function addFavorite($star)
@@ -66,7 +99,7 @@
 	function updateName()
 	{
 		$.ajax({
-			url: $('#board').attr('data-board-id'),
+			url: '/boards/' + $('#board').attr('data-board-id'),
 			method: 'PATCH',
 			data: {
 				name: $('.board-name').text()
@@ -81,9 +114,9 @@
 		$.ajax({
 			url: '/boards/' + $('#board').attr('data-board-id'),
 			method: 'PATCH',
-			data: { visibility: $(this).val() },
+			data: { is_private: $(this).val() },
 			error: function (e) { console.log(e.statusText); },
-			success: function (r) { console.log(r); }
+			success: function (r) {  }
 		});
 	}
 
@@ -105,5 +138,43 @@
 				}
 			}
 		});
+	}
+
+	function members()
+	{
+		var members = [];
+		$.each($('.members .member-name'), function (i, v) {
+			members.push($(v).text());
+		});
+		return members;
+	}
+
+	function getUsers()
+	{
+		var $list = $('.potential-members-list');
+		var $input = $(this);
+		currentSearch = $input.val();
+		if(currentSearch.length >= 3 && currentSearch != lastSearch) {
+			$.ajax({
+				url: '/boards/' + $('#board').attr('data-board-id') + '/nonMembers',
+				method: 'GET',
+				data: {
+					name: currentSearch,
+					members: members
+				},
+				error: function (e) { console.log(e.statusText); },
+				success: function (r) {
+					var users = '', i;
+					var nbOfUsers = r.users.length;
+					for(i=0; i<nbOfUsers; i++) {
+						users += '<li class="potential-member-to-invite" data-member-id="' + r.users[i].id + '">' + r.users[i].name + '</li>';
+					}
+					$list.html('').addClass('is-shown');
+					$(users).appendTo($list);
+				}
+			});
+		}
+		else if(currentSearch.length == 0) $list.removeClass('is-shown');
+		lastSearch = currentSearch;
 	}
 })();

@@ -1,17 +1,30 @@
 @extends('layouts.app')
 
+<?php 
+    $isAMember = $board->users()->find(auth()->id());
+?>
+
 @section('content')
 <div class="container" id="board" data-board-id="{{ $board->id }}">
     <div class="row">
         <div class="col-xs-12">
-            <span class="board-name">{{ $board->name }}</span>
-            <button class="rename-board">Rename</button>
+            <div class="row">
+                <div class="col-xs-6">
+                    <span class="board-name">{{ $board->name }}</span>
+                    @if(!empty($isAMember)) <button class="rename-board">Rename</button> @endif
+                </div>
+                <div class="col-xs-6">
+                    <div class="btn btn-primary pull-right show-board-settings">SETTINGS</div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-3">
+                    @if(!empty($isAMember))
                     <select name="visibility" id="" class="board-visibility">
-                        <option value="private" {{ $board->visibility == 'private' ? 'selected' : '' }}>Private</option>
-                        <option value="public" {{ $board->visibility == 'public' ? 'selected' : '' }}>Public</option>
+                        <option value="1" {{ $board->is_private == 1 ? 'selected' : '' }}>Private</option>
+                        <option value="0" {{ $board->is_private == 0 ? 'selected' : '' }}>Public</option>
                     </select>
+                    @endif
                 </div>
             </div>
         </div>
@@ -22,16 +35,17 @@
                     <div class="list" data-list-id="{{ $list->id }}">
                         <div class="list-header">
                             <span><strong class="list-name">{{ $list->name }}</strong></span>
-                            <button class="rename-list">Rename</button>
-                            <span class="delete-list"></span>
+                            @if(!empty($isAMember)) <button class="rename-list">Rename</button> @endif
+                            @if(!empty($isAMember)) <span class="delete-list"></span> @endif
                         </div>
                         @foreach($list->cards as $card)
                         <a href="/cards/{{ $card->id }}" class="card">
                             <span class="card-name">{{ $card->name }}</span>
-                            <span class="edit-card"></span>
-                            <span class="delete-card"></span>
+                            @if(!empty($isAMember)) <span class="edit-card"></span> @endif
+                            @if(!empty($isAMember)) <span class="delete-card"></span> @endif
                         </a>
                         @endforeach
+                        @if(!empty($isAMember))
                         <a href="#" class="create-card">Add a card...</a>
                         <div class="create-card-form">
                             <header class="create-card-header">
@@ -46,9 +60,11 @@
                                 <button class="btn btn-primary store-card">Create</button>
                             </div>
                         </div>
+                        @endif
                     </div> 
                 </li>
                 @endforeach
+                @if(!empty($isAMember))
                 <li class="list-wrapper create-list-wrapper">
                     <div class="list">
                         <div class="create-list">Add a list...</div>
@@ -67,6 +83,7 @@
                         </div>
                     </div>
                 </li>
+                @endif
             </ul>
         </div>
         <div class="col-xs-12">
@@ -129,4 +146,27 @@
         </div>
     </div>
 </div>
+
+<div class="board-settings">
+    <div class="hide-board-settings"></div>
+    <h4 class="zero--mt plc--c">Members</h4>
+    <div class="members">
+        @foreach($board->users as $member)
+        <div class="member" data-member-id="{{ $member->id }}"><div class="member-name">{{ $member->name }}</div></div>
+        @endforeach
+    </div>
+    <hr>
+    <div class="invite-members-section">
+        <input type="text" class="member-to-invite" placeholder="Member to invite">
+        <ul class="potential-members-list"></ul>
+    </div>
+</div>
+
+<div class="member-details">
+    <div class="member-name"></div>
+    <div class="member-email"></div>
+    <div class="member-since"></div>
+    <div class="member-type"></div>
+</div>
+
 @stop

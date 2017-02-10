@@ -36,20 +36,23 @@ class CardsController extends Controller
      */
     public function store(Request $request)
     {
-        // 3 queries
-        $board = auth()->user()->boards();
-        $boardId = ListModel::findOrFail($request->list_id);
+        $authenticatedBoard = auth()->user()->boards()->findOrFail($request->board_id);
+        $authenticatedList = $authenticatedBoard->lists()->findOrFail($request->list_id);
 
-        
-        $card = new Card;
-        $card->list_id = $request->list_id;
-        $card->name = $request->name;
-        $card->order = $request->order;
-        $card->save();
-        return response(['message' => [
-            'name' => $card->name,
-            'href' => '/cards/' . $card->id
-        ], 'status' => 'success']);
+        if(!empty($authenticatedBoard) && !empty($authenticatedList)) {
+            $card = new Card;
+            $card->list_id = $request->list_id;
+            $card->name = $request->name;
+            $card->order = $request->order;
+            $card->save();
+            return response([
+                'card' => [
+                    'name' => $card->name,
+                    'href' => '/cards/' . $card->id
+                ],
+                'status' => 'success'
+            ]);
+        }
     }
 
     /**
@@ -83,10 +86,15 @@ class CardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $card = Card::findOrFail($id);
-        $card->name = $request->name;
-        $card->save();
-        return response(['message' => $request->name, 'status' => 'success']);
+        $authenticatedBoard = auth()->user()->boards()->findOrFail($request->board_id);
+        $authenticatedList = $authenticatedBoard->lists()->findOrFail($request->list_id);
+
+        if(!empty($authenticatedBoard) && !empty($authenticatedList)) {
+            $card = Card::findOrFail($id);
+            $card->name = $request->name;
+            $card->save();
+            return response(['message' => $request->name, 'status' => 'success']);
+        }
     }
 
     /**
@@ -97,7 +105,12 @@ class CardsController extends Controller
      */
     public function destroy($id, Request $request)
     {
-        Card::findOrFail($id)->delete();
-        return response(['message' => 'Card deleted', 'status' => 'success']);
+        $authenticatedBoard = auth()->user()->boards()->findOrFail($request->board_id);
+        $authenticatedList = $authenticatedBoard->lists()->findOrFail($request->list_id);
+
+        if(!empty($authenticatedBoard) && !empty($authenticatedList)) {
+            Card::findOrFail($id)->delete();
+            return response(['message' => 'Card deleted', 'status' => 'success']);
+        }
     }
 }

@@ -16,6 +16,22 @@ class BoardsController extends Controller
         ]);
     }
 
+    public function nonMembers($id, Request $request)
+    {
+        return response([
+            'users' => User::where('name', 'LIKE', $request->name . '%')->whereNotIn('name', explode(',', $request->members))->get()
+        ]);
+    }
+
+    public function addMember($boardId, Request $request)
+    {
+        $board = auth()->user()->boards()->findOrFail($boardId);
+        $board->users()->attach($request->id);
+        return response([
+            'status' => 'success'
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +50,7 @@ class BoardsController extends Controller
      */
     public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -62,9 +78,8 @@ class BoardsController extends Controller
     {
         $board = Board::findOrFail($id);
         $isLoggedIn = !empty(auth()->user());
-        $isPrivate = $board->is_private;
-        $isAuthenticated = $isLoggedIn ? !empty(auth()->user()->boards()->findOrFail($id)) : false;
-        if($isPrivate && !$isAuthenticated) return view('errors/private_board');
+        $isAuthenticated = $isLoggedIn ? !empty(auth()->user()->boards()->find($id)) : false;
+        if($board->is_private && !$isAuthenticated) return view('errors/private_board');
         return view('boards/show', compact('board'));
     }
 
@@ -97,8 +112,8 @@ class BoardsController extends Controller
             $board->name = $request->name;
             $board->save();
         }
-        else if(isset($request->visibility)) {
-            $board->visibility = $request->visibility;
+        else if(isset($request->is_private)) {
+            $board->is_private = $request->is_private;
             $board->save();
         }
         return response(['status' => 'success']);

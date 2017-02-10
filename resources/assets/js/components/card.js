@@ -9,13 +9,14 @@
 
 	function addEvents()
 	{
-		$('#board').on('click', '.create-card', showCreate);
-		$('#board').on('click', '.create-card-hide', hideCreate);
-		$('#board').on('click', '.store-card', store);
-		$('#board').on('click', '.edit-card', showEdit);
-		$('#board').on('click', '.edit-card-hide', hideEdit);
-		$('#board').on('click', '.update-card', update);
-		$('#board').on('click', '.delete-card', _delete);
+		var $board = $('#board');
+		$board.on('click', '.create-card', create);
+		$board.on('click', '.create-card-hide', hideCreate);
+		$board.on('click', '.store-card', store);
+		$board.on('click', '.edit-card', edit);
+		$board.on('click', '.edit-card-hide', hideEdit);
+		$board.on('click', '.update-card', update);
+		$board.on('click', '.delete-card', _delete);
 	}
 
 	function hideCreate()	{ $(this).closest('.create-card-form').removeClass('active');	}
@@ -29,7 +30,9 @@
 			url: url,
 			method: 'PATCH',
 			data: {
-				name: $(this).closest('.edit-card-form').find('.card-name').val()
+				name: $(this).closest('.edit-card-form').find('.card-name').val(),
+				board_id: $('#board').attr('data-board-id'),
+				list_id: $('.card[href="' + url + '"]').closest('.list').attr('data-list-id'),
 			},
 			error: function (e) { console.log(e.statusText) },
 			success: function (r) {
@@ -41,13 +44,15 @@
 
 	function store()
 	{
-		var $list = $(this).closest('.list');
+		var $storeBtn = $(this);
+		var $list = $storeBtn.closest('.list');
 		$.ajax({
 			url: '/cards',
 			method: 'POST',
 			data: {
-				name: $(this).closest('.create-card-form').find('.card-name').val(),
+				name: $storeBtn.closest('.create-card-form').find('.card-name').val(),
 				list_id: $list.attr('data-list-id'),
+				board_id: $('#board').attr('data-board-id'),
 				order: ($list.find('.card').length + 1)
 			},
 			error:  function (r) {
@@ -55,8 +60,8 @@
 			},
 			success: function (r) {
 				if(r.status == 'success') {
-					hideCreate();
-					var card = '<a href="' + r.message.href + '" class="card"><span class="card-name">' + r.message.name + '</span><span class="edit-card"></span><span class="delete-card"></span></a>';
+					$storeBtn.closest('.create-card-form').removeClass('active');
+					var card = '<a href="' + r.card.href + '" class="card"><span class="card-name">' + r.card.name + '</span><span class="edit-card"></span><span class="delete-card"></span></a>';
 					$list.find('.create-card').before(card);
 					$list.find('.create-card-form .card-name').val('');
 				}
@@ -64,14 +69,14 @@
 		});
 	}
 
-	function showCreate(e)
+	function create(e)
 	{
 		e.preventDefault();
 		e.stopPropagation();
 		$(this).next('.create-card-form').addClass('active');
 	}
 
-	function showEdit(e)
+	function edit(e)
 	{
 		e.preventDefault();
 		e.stopPropagation();
@@ -89,6 +94,10 @@
 		$.ajax({
 			url: $card.attr('href'),
 			method: 'DELETE',
+			data: {
+				board_id: $('#board').attr('data-board-id'),
+				list_id: $(this).closest('.list').attr('data-list-id'),
+			},
 			error:  function (r) {
 				console.log('Error: ' + r.statusText);
 			},

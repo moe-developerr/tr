@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post('boards/{board}/addMember', 'BoardsController@addMember');
+Route::get('boards/{board}/nonMembers', 'BoardsController@nonMembers');
 Route::resource('boards', 'BoardsController');
 Route::group(['middleware' => ['auth']], function () {
 	Route::resource('lists', 'ListsController');

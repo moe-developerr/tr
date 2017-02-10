@@ -96,3 +96,11 @@
 	&:focus { @extend .sdc--c; }
 	&:hover { background-color: lighten($s-l-c, 5%); }
 }
+.board-settings { @extend .pdc--bg; }
+.member,
+.potential-member-to-invite {
+	@extend .slc--bg;
+	@extend .pdc--c;
+	&:hover { @extend .plc--bg;	}
+}
+.hide-board-settings { @extend .plc--c; }

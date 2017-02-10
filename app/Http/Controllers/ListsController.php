@@ -41,7 +41,6 @@ class ListsController extends Controller
             if(isset($request->order)) $list->order = $request->order;
             if(isset($request->board_id)) $list->board_id = $request->board_id;
             $list->save();
-            $list->users()->attach(auth()->id());
             return response([
                 'list' => [
                     'id' => $list->id,
